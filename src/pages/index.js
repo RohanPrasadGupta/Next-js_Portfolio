@@ -18,7 +18,9 @@ export default function Home() {
         <Layout className='pt-0'>
           <div className="flex item-center justify-between w-full">
             <div className='w-1/2'>
-              <Image src ={profilepic} alt='ROHAN' className ='w-full h-auto '/>
+              <Image src ={profilepic} alt='ROHAN' className ='w-full h-auto '
+              priority
+              sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'/>
             </div>
 
             <div className='w-1/2 felx felx-col items-center self-center'>

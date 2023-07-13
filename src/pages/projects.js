@@ -8,9 +8,13 @@ import Image from 'next/image'
 import textproj from "../../public/images/projects/textproject.png";
 import Opencv from "../../public/images/projects/Opencv.png";
 import spotify from "../../public/images/projects/spotifyclone.png";
+import { motion } from 'framer-motion'
 
 
 const Projects = () => {
+
+  const FramerImage = motion(Image);
+
   const FeatureProject = ({ title, date, summary, link, linkGH,img }) => {
     return (
 
@@ -20,19 +24,23 @@ const Projects = () => {
 
         <div className='absolute top-1 -right-3 -z-10  w-[101%] h-[102%] rounded-[1rem] bg-dark/60' />
                         
-        <Image src = {img} alt={title} className='w-full h-full border-solid border-2 border-dark/75 rounded-2xl p-1 shadow-2xl '></Image>
+        <FramerImage src = {img} alt={title} className='w-full h-full border-solid border-2 border-dark/75 rounded-2xl p-1 shadow-2xl '
+        whileHover={{scale:1.05}}
+        transition={{duration:0.2}}
+        priority
+              sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'></FramerImage>
 
         <div className=' flex flex-col items-start justify-between pl-6'>
         <h3 className='font-bold mt-8 text-primary'>
           {title} &nbsp;&nbsp;<span className='text-sm text-black/75'>{date}</span>
         </h3>
         <p>{summary}</p>
-        <div className='flex my-4 items-center'>
+        <div className='flex my-4 items-center fle'>
           <Link href={linkGH} target='_blank'>
-            <GithubIcon className='w-12 h-12 mr-4' />
+            <GithubIcon className=' h-[40px] w-[40px] mr-4 hover:scale-90' />
           </Link>
-          <Link href={link} target='_blank' className='flex  item-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark'>
-            View Project<LinkArrow className='ml-4 w-8 h-8' />
+          <Link href={link} target='_blank' className='flex item-center bg-dark text-light p-2 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark'>
+            View-Project<LinkArrow className='ml-4 w-4 h-4 mt-1' />
           </Link>
         </div>
         </div>
