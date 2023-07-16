@@ -20,7 +20,17 @@ module.exports = {
         primaryDark: "#58E6D9", // 80,230,217
     }
     },
+    screens: {
+      // screens sizes are defined 
+      "2xl" : {max : '1535px'},
+      xl : {max : '1279px'},
+      lg : {max : '1023px'},
+      md : {max : '767px'},
+      sm : {max : '639px'},
+      xs : {max : '479px'}
+
   },
   plugins: [],
 }
 
+}

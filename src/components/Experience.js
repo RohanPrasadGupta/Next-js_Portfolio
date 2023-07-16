@@ -13,9 +13,9 @@ const Details =({position, company, time,companyLink, address, description})=>{
             initial={{y:50}}
             whileInView={{y:0}}
             transition={{duration:1 , type:'keyframes'}}>
-                <h3 className='capitalize font-bold text-2xl'>{position}&nbsp;<a href={companyLink} target ='_blank' className='text-primary capitalize' >@{company}</a></h3>
-                <span className='capitalize text-dark/85'>{time} | {address}</span>
-                <p className='font-medium w-full'>{description}</p>
+                <h3 className='capitalize font-bold text-2xl md:text-xl sm:text-lg xs:text-base'>{position}&nbsp;<a href={companyLink} target ='_blank' className='text-primary capitalize' >@{company}</a></h3>
+                <span className='capitalize text-dark/85 md:text-sm xs:text-sm sm:text-sm'>{time} | {address}</span>
+                <p className='font-medium w-full md:text-sm xs:text-sm sm:text-sm'>{description}</p>
             </motion.div>
         </li>
     )
@@ -32,11 +32,11 @@ const Experience = () => {
 
   return (
     
-    <div className='my-64'>
-        <h2 className='font-bold text-8xl text-center w-full mb-32'>
+    <div className='my-64 md:my-28 sm:my-28 xs:my-28 '>
+        <h2 className='font-bold text-8xl text-center w-full mb-32 md:text-7xl sm:text-6xl xs:text-5xl md:mb-20 sm:mb-20 xs:mb-20 '>
             Experience
         </h2>
-        <div ref={ref}  className='w-[75%] mx-auto relative'>
+        <div ref={ref}  className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
             <motion.div 
             style={{scaleY:scrollYProgress}}
             className='bg-dark origin-top w-[4px] h-full left-9 absolute top-1' />
