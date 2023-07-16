@@ -17,11 +17,11 @@ const About = () => {
       </Head>
       <Transitions />
 
-      <main className="flex w-full flex-col items-center justify-center ">
-        <Layout className={"p-16"}>
+      <main className="flex w-full flex-col items-center justify-center">
+        <Layout className={"p-16 pt-10"}>
           <AnimatedText
             text="Harnessing the Potential: A Passion for Ideas, Solutions and Coding!"
-            className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            className="mb-16 text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 md:gap-8 xs:gap-8">
             <div className="col-span-3 flex  flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
@@ -81,8 +81,8 @@ const About = () => {
             </div>
           </div>
 
-          <Skill />
-          <Experience />
+          <Skill  />
+          <Experience  />
         </Layout>
       </main>
     </>

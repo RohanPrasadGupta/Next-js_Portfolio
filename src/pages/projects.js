@@ -41,7 +41,7 @@ const Projects = () => {
             <GithubIcon className=' h-[40px] w-[40px] mr-4 hover:scale-90  md:h-[30px] md:w-[30px] sm:h-[25px] sm:w-[25px] xs:h-[25px] xs:w-[25px]' />
           </Link>
           <Link href={link} target='_blank' className='flex item-center bg-dark text-light p-2 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark md:text-sm xs:text-xs sm:text-sm'>
-            View-Project<LinkArrow className='ml-4 w-3.5 h-4.5 sm:w-3 sm:h-3 md:w-3 md:h-3 xs:w-3 xs:h-3' />
+            View-Project<LinkArrow className='ml-4 w-5 h-4.5 sm:w-3 sm:h-3 md:w-3 md:h-3 xs:w-3 xs:h-3' />
           </Link>
         </div>
         </div>
@@ -59,7 +59,7 @@ const Projects = () => {
       <Transitions />
       <main className='w-full mb-16 flex flex-col items-center justify-center'>
         <Layout className='pt-16'>
-          <AnimatedText text="Projects" className='text-[50px] h-10 md:text-[40px] sm:text-[35px] xs:text-[35px]' />
+          <AnimatedText text="Projects" className='text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px]' />
 
           <div className='grid grid-cols-12 gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
             <div className='col-span-6'>

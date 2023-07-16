@@ -43,7 +43,7 @@ const Education = () => {
     <Transitions />
     <main>
     <Layout>
-    <div className='my-[10px]  items-center'>
+    <div className='my-[-50px]  items-center'>
         <h2 className='font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl xs:text-5xl'>Education</h2>
         <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
         <motion.div 

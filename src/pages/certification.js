@@ -97,7 +97,7 @@ const certification = () => {
         <Transitions />
         <main className='flex w-full flex-col items-center justify-center'>
             <Layout className={'pt-16'}>
-                <AnimatedText text="Certification" className='text-[50px] h-10 md:text-[35px] sm:text-[30px] xs:text-[30px]'/>
+                <AnimatedText text="Certification" className='text-6xl h-20 md:text-[35px] sm:text-[30px] xs:text-[30px]'/>
                 
                 <div className='mt-20 flex justify-between md:flex md:flex-col md:gap-8 sm:flex sm:flex-col sm:gap-8 xs:flex xs:flex-col xs:gap-8 md:mt-10 sm:mt-10 xs:mt-10 '>
                     <ul>

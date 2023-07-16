@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 const Skill = () => {
   return (
     <>
-      <h2 className="font-bold text-8xl text-center w-full mt-40 mb-20 md:text-7xl md:mb-10 sm:mb-10 sm:text-6xl xs:text-5xl xs:mb-10 md:mt-10 xs:mt-10 sm:mt-10 ">Skills</h2>
+      <h2 className="font-bold text-8xl text-center w-full mt-32 mb-20 md:text-7xl md:mb-10 sm:mb-10 sm:text-6xl xs:text-5xl xs:mb-10 md:mt-10 xs:mt-10 sm:mt-10 ">Skills</h2>
 
       <div className="border-8 border-dark/75 pb-20 rounded-3xl ">
       <motion.div className="flex flex-wrap justify-center items-center text-center pt-20 md:pt-8  md:flex-col md:gap-3 sm:flex-col sm:gap-3 xs:flex-col xs:gap-3"
