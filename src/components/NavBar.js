@@ -13,7 +13,7 @@ const CustomLink = ({href, title, className = ''})=>{
         <Link href = {href} className={`${className} relative group`}>
             {title}
 
-            <span className={`h-[1px] inline-block w-0 bg-dark absolute left-0 -bottom-0.5
+            <span className={`h-[1px] inline-block w-0 bg-light absolute left-0 -bottom-0.5
             group-hover:w-full transition-[width] ease duration-300
             ${router.asPath === href ? 'w-full' : 'w-0'}
             `}>&nbsp;</span>
@@ -35,7 +35,7 @@ const CustomMobileLink = ({href, title, className = '', toggle})=>{
         <button href = {href} className={`${className} relative group text-light my-2`} onClick={handleClick}>
             {title}
 
-            <span className={`h-[1px] inline-block w-0 bg-dark absolute left-0 -bottom-0.5
+            <span className={`h-[1px] inline-block w-0 bg-light absolute left-0 -bottom-0.5
             group-hover:w-full transition-[width] ease duration-300
             ${router.asPath === href ? 'w-full' : 'w-0'}
             `}>&nbsp;</span>
@@ -54,15 +54,15 @@ const NavBar = () => {
 
   return (
     <header
-    className='w-full px-32 py-12 font-medium flex item-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-8 '>
+    className='w-full px-32 py-6 font-medium flex item-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-8 border-b-4 '>
 
         <button className='flex-col justify-center items-center hidden lg:flex' onClick = {handleClick}>
-            <span className={`bg-dark dark:bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-            <span className={`bg-dark dark:bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-            <span className= {`bg-dark dark:bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+            <span className={`bg-light dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+            <span className={`bg-light dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className= {`bg-light dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
         </button>
 
-        <div className='w-full flex justify-between items-center lg:hidden '>
+        <div className='w-full flex justify-between items-center lg:hidden text-light font-semibold text-lg '>
         <nav >
             <CustomLink href='/' title = 'Home' className='mr-4'/>
             <CustomLink href='/about' title = 'About' className='mx-4' />
@@ -79,7 +79,7 @@ const NavBar = () => {
             className='w-6 mx-3'>
                 <GithubIcon/>
             </motion.a>
-            <motion.a href='https://github.com' target={"blank"}
+            <motion.a href='https://www.linkedin.com/in/rohanprasadgupta' target={"blank"}
             whileHover={{y:-3}}
             whileTap={{scale:0.9}}
             className='w-6 mx-3'>
@@ -109,36 +109,21 @@ const NavBar = () => {
         </nav>
        
         <nav className='flex item-center justify-center flex-wrap mt-2  '>
-            <motion.a href='https://github.com' target={"blank"}
-            whileHover={{y:-3}}
-            whileTap={{scale:0.9}}
-            className='w-6 mr-3 sm:mx-1'>
-                <TwitterIcon/>
-            </motion.a>
+             
             <motion.a href='https://github.com' target={"blank"}
             whileHover={{y:-3}}
             whileTap={{scale:0.9}}
             className='w-6 mx-3 sm:mx-1'>
                 <GithubIcon/>
             </motion.a>
-            <motion.a href='https://github.com' target={"blank"}
+            <motion.a href='https://www.linkedin.com/in/rohanprasadgupta' target={"blank"}
             whileHover={{y:-3}}
             whileTap={{scale:0.9}}
             className='w-6 mx-3 sm:mx-1'>
                 <LinkedInIcon/>
             </motion.a>
-            <motion.a href='https://github.com' target={"blank"}
-            whileHover={{y:-3}}
-            whileTap={{scale:0.9}}
-            className='w-6 mx-3 sm:mx-1'>
-                <PinterestIcon/>
-            </motion.a>
-            <motion.a href='https://github.com' target={"blank"}
-            whileHover={{y:-3}}
-            whileTap={{scale:0.9}}
-            className='w-6 ml-3 sm:mx-1'>
-                <DribbbleIcon/> 
-            </motion.a>
+           
+           
             
         </nav>
         </motion.div>

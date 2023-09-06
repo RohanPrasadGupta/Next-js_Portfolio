@@ -17,10 +17,10 @@ const Details = ({title, place,time,organization,score})=>{
             whileInView={{y:0}}
             transition={{duration:1 , type:'keyframes'}}>
 
-                <h3 className='capitalize font-bold text-2xl sm:text:xl md:text-xl xs:text-lg text-primary'>{title}</h3>
-                <span className='capitalize text-dark font-bold text-sm sm:text-xs xs:text-xs md:text-xs'>{time} | {organization}</span>
-                <p className='text-sm w-full '>{place}</p>
-                <span className='text-xs w-full font-bold'>{score}</span>
+                <h3 className='capitalize font-bold text-2xl sm:text:xl md:text-xl xs:text-lg text-light/90'>{title}</h3>
+                <span className='capitalize text-yellow font-bold text-sm sm:text-xs xs:text-xs md:text-xs'>{time} | {organization}</span>
+                <p className='text-sm w-full text-white '>{place}</p>
+                <span className='text-xs w-full font-bold text-white'>{score}</span>
             </motion.div>
         </li>
     )
@@ -42,9 +42,10 @@ const Education = () => {
     </Head>
     <Transitions />
     <main>
-    <Layout>
-    <div className='my-[-50px]  items-center'>
-        <h2 className='font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl xs:text-5xl'>Education</h2>
+    <Layout className='bg-purple'>
+    <div className='my-[-50px]  items-center '>
+    <AnimatedText text="Education" className='font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl xs:text-5xl text-light' />
+        
         <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
         <motion.div 
             style={{scaleY:scrollYProgress}}
@@ -78,7 +79,7 @@ const Education = () => {
                 </ul>
             
         </div>
-        <AnimatedText text='A good education gives you the knowledge, and skills give you the confidence to succeed....' className='mt-40 md:mt-20 xs:mt-20 sm:mt-20'/>
+        <AnimatedText text='A good education gives you the knowledge, and skills give you the confidence to succeed....' className='mt-40 text-light/90  md:mt-20 xs:mt-20 sm:mt-20'/>
     </div>
     </Layout>
     </main>

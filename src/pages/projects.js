@@ -8,6 +8,9 @@ import Image from 'next/image'
 import textproj from "../../public/images/projects/textproject.png";
 import Opencv from "../../public/images/projects/Opencv.png";
 import spotify from "../../public/images/projects/spotifyclone.png";
+import mergedProj from '../../public/images/projects/mergerd-proj.png'
+import NewsPanda from '../../public/images/projects/NewsPanda.png'
+import OldPortfolio from '../../public/images/projects/OldPortfolio.png'
 import { motion } from 'framer-motion'
 import Transitions from '@/components/Transitions'
 
@@ -21,15 +24,14 @@ const Projects = () => {
 
       <div>
        
-        <div className='content-center border-2 border-solid border-black/80 rounded-3xl p-3 relative bg-light'>
+        <div className='content-center border-2 border-solid border-black/80 rounded-3xl p-3 relative bg-light/90'>
 
-        <div className='absolute top-1 -right-3 -z-10  w-[101%] h-[102%] rounded-[1rem] bg-dark/60' />
+        <div className='absolute top-1 -right-3 -z-10  w-[101%] h-[102%] rounded-[1rem] bg-light/60' />
                         
         <FramerImage src = {img} alt={title} className='w-full h-full border-solid border-2 border-dark/75 rounded-2xl p-1 shadow-2xl '
         whileHover={{scale:1.05}}
         transition={{duration:0.2}}
-        priority
-              sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'></FramerImage>
+        prioritysizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'></FramerImage>
 
         <div className=' flex flex-col items-start justify-between pl-6'>
         <h3 className='font-bold mt-8 text-primary md:text-sm xs:text-sm sm:text-sm '>
@@ -40,7 +42,7 @@ const Projects = () => {
           <Link href={linkGH} target='_blank'>
             <GithubIcon className=' h-[40px] w-[40px] mr-4 hover:scale-90  md:h-[30px] md:w-[30px] sm:h-[25px] sm:w-[25px] xs:h-[25px] xs:w-[25px]' />
           </Link>
-          <Link href={link} target='_blank' className='flex item-center bg-dark text-light p-2 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark md:text-sm xs:text-xs sm:text-sm'>
+          <Link href={link} target='_blank' className='flex item-center bg-dark text-light px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark md:text-sm xs:text-xs sm:text-sm h-20 p-3'>
             View-Project<LinkArrow className='ml-4 w-5 h-4.5 sm:w-3 sm:h-3 md:w-3 md:h-3 xs:w-3 xs:h-3' />
           </Link>
         </div>
@@ -58,11 +60,23 @@ const Projects = () => {
       </Head>
       <Transitions />
       <main className='w-full mb-16 flex flex-col items-center justify-center'>
-        <Layout className='pt-16'>
-          <AnimatedText text="Projects" className='text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px]' />
+        <Layout className='pt-16 bg-purple'>
+          <AnimatedText text="Projects" className='text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px] text-light' />
 
-          <div className='grid grid-cols-12 gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
-            <div className='col-span-6'>
+          <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
+            
+            
+            <FeatureProject
+                img={mergedProj}
+                title='Merged Projects using REACT-JS'
+                date='[ 2023 ]'
+                summary="Passionate ReactJS enthusiast 🚀 | Explored the world of APIs, useState, useEffect, and more 🌐 | Crafted a multifaceted project integrating a ToDo app, Weather app, Expenses Tracker, and Joke page 📊 | Eager to continue learning and building with JavaScript! 💡 #ReactJS #WebDevelopment #APIs #JavaScript."
+                link='https://rpg-merged-projects.netlify.app/'
+                linkGH='https://github.com/RohanPrasadGupta/Combined_Small_Project'
+              />
+            
+
+            
               <FeatureProject
               img={textproj}
                 title='WORDS AND CHARACTER COUNTER WITH THEME CHANGING WEBSITE USING REACT JS'
@@ -71,8 +85,25 @@ const Projects = () => {
                 link='https://rohanprasadgupta-react-text-project.netlify.app/'
                 linkGH='https://github.com/RohanPrasdGupta/React-TEXT_PROJECT-'
               />
+            
+          
             </div>
-            <div className='col-span-6'>
+
+            <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
+
+            
+            <FeatureProject
+                img={spotify}
+                title='SIMPLE SPOTIFY CLONE'
+                date='[ 2023 ]'
+                summary="This is a one-page Spotify clone using basic HTML, CSS, and JavaScript. This project showcases my skills in front-end development and offers an interactive music streaming experience, complete with song previews and a visually appealing design. JavaScript adds a touch of magic, ensuring smooth transitions and real-time song updates for an immersive music-listening journey."
+                link='https://rpg-spotify-clone1.netlify.app/'
+                linkGH='https://github.com/RohanPrasdGupta/Simple_Spotify_CLONE/tree/main'
+                />
+
+           
+            
+            
             <FeatureProject
                 img={Opencv}
                 title='FACE RECOGNITION ATTENDANCE SYSTEM'
@@ -80,26 +111,34 @@ const Projects = () => {
                 summary="The system captures live video, detects and compares faces to mark attendance. Attendance data is and profile pictures are stored on Firebase in real time. Python, OpenCV, and MediaPipe were used for development."
                 link='https://github.com/RohanPrasdGupta/HW_PROJECT-TU-'
                 linkGH='https://github.com/RohanPrasdGupta/HW_PROJECT-TU-'
-              />
-            </div>
-          </div>
+                />
+            
+                </div>
 
-          <div className='grid grid-cols-12 gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex '>
-            <div className='col-span-6 '>
+                <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
+
+            
             <FeatureProject
-                img={spotify}
-                title='SIMPLE SPOTIFY CLONE'
+                img={NewsPanda}
+                title='NEWS PANDA'
                 date='[ 2023 ]'
-                summary="Spotify clone using HTML, CSS, and JavaScript. The clone provides a user-friendly interface where users can browse and listen to their favorite music tracks."
-                link='https://silly-malasada-5f0583.netlify.app/'
-                linkGH='https://github.com/RohanPrasdGupta/Simple_Spotify_CLONE/tree/main'
+                summary="I have developed a NEWS PANDA website utilizing the newAPI infrastructure. The website's front-end was constructed using the React.js framework, with Bootstrap employed for its stylistic elements. Throughout the project's development, I acquired valuable experience in working with JavaScript, API integration, website styling, and advanced JavaScript features, including but not limited to useState, useEffect, setTimeout, and various other properties.
+                Regrettably, due to the unavailability of the API for production purposes, deployment to a production environment is not feasible without incurring additional costs. Nonetheless, the website functions seamlessly when hosted on a development server."
+                link='https://github.com/RohanPrasadGupta/news_app_reactJS'
+                linkGH='https://github.com/RohanPrasadGupta/news_app_reactJS'
               />
+            <FeatureProject
+                img={OldPortfolio}
+                title='OLD PORTFOLIO WEBSITE'
+                date='[ 2021 ]'
+                summary="Old portfolio website deployed on w3space created using #Bootstrap #HTML #CSS"
+                link='https://rohanprasadgupta.w3spaces.com/'
+                linkGH='https://rohanprasadgupta.w3spaces.com/'
+              />
+              
 
-            </div>
-            <div className='col-span-6'>
-                Here project-4
-            </div>
-          </div>
+                </div>
+
         </Layout>
       </main>
     </>

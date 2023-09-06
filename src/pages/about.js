@@ -18,24 +18,24 @@ const About = () => {
       <Transitions />
 
       <main className="flex w-full flex-col items-center justify-center">
-        <Layout className={"p-16 pt-10"}>
+        <Layout className={"p-16 pt-10 bg-purple"}>
           <AnimatedText
             text="Harnessing the Potential: A Passion for Ideas, Solutions and Coding!"
-            className="mb-16 text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            className="mb-16 text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8 text-light/90"
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 md:gap-8 xs:gap-8">
             <div className="col-span-3 flex  flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 underline underline-offset-2 md:text-base sm:text-base xs:text-sm">
+              <h2 className="mb-4 text-lg font-bold uppercase text-light/75 underline underline-offset-2 md:text-base sm:text-base xs:text-sm">
                 About-Me
               </h2>
 
-              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm">
+              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm text-light/90">
                 A Master's degree [AI and IoT] Computer Science Student. On my
                 way to transform the complicated tech ideas into user-friendly
                 websites.
               </p>
 
-              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm ">
+              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm text-light/90">
                 With my skills in programming, data analytics, and web
                 development, I am excited to contribute to a team that values
                 innovation and continuous learning. I'm open for any
@@ -44,7 +44,7 @@ const About = () => {
             </div>
 
             <div className=" col-span-3 relative h-max rounded-2xl border-4 border-solid border-dark/75 bg-light xl:col-span-4 md:order-1 md:col-span-8 sm:col-span-8 xs:col-span-8">
-              <div className="absolute top-0 -right-3 -z-10  w-[102%] h-[103%] rounded-[1rem] bg-dark/75" />
+              <div className="absolute top-0 -right-3 -z-10  w-[102%] h-[103%] rounded-[1rem] bg-light/75" />
               <Image
                 src={profilepic}
                 alt="ROHAN"
@@ -59,7 +59,7 @@ const About = () => {
                 <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
                   5+
                 </span>
-                <h2 className="my-10 text-3xl font-medium capitalize text-dark/75 md:text-2xl sm:text-xl xs:text-lg">
+                <h2 className="my-10 text-3xl font-medium capitalize text-light/90 md:text-2xl sm:text-xl xs:text-lg">
                   Projects
                 </h2>
               </div>
@@ -68,13 +68,13 @@ const About = () => {
                 <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
                   8+
                 </span>
-                <h2 className="my-10 text-3xl font-medium capitalize text-dark/75 xs:text-lg md:text-2xl sm:text-xl">
+                <h2 className="my-10 text-3xl font-medium capitalize text-light/90 xs:text-lg md:text-2xl sm:text-xl">
                   Skills
                 </h2>
               </div>
               <div className="my-8 flex-col">
                 <span className="text-5xl p-4 md:text-5xl sm:text-5xl xs:text-5xl">&#128522;</span>
-                <h2 className="my-6 text-3xl font-medium capitalize text-dark/75 md:text-2xl sm:text-xl xs:text-lg"> 
+                <h2 className="my-6 text-3xl font-medium capitalize text-light/90 md:text-2xl sm:text-xl xs:text-lg"> 
                   Happy to Help :)
                 </h2>
               </div>

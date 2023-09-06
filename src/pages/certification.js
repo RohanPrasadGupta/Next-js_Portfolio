@@ -63,9 +63,9 @@ const CertiLine = ({title,date,img,link})=>{
             initial={{y:200}}
             whileInView = {{y:0, transition:{duration:0.5, ease:'easeInOut'}}}
             viewport={{once:true}}
-            className='relative w-full p-4 py-4 mt-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 md:text-sm xs:text-sm sm:text-sm'>
+            className='relative w-full p-4 py-4 mt-4 rounded-xl flex items-center justify-between bg-light/50 text-light/80 first:mt-0 border border-solid border-light/50 border-r-4 border-b-4 md:text-sm xs:text-sm sm:text-sm'>
                 <MovingImage title={title} img = {img} link = {link}/>
-                <span className='text-primary font-semibold pl-4 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
+                <span className='text-dark/80 font-semibold pl-4 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
             </motion.li>
     )
 }
@@ -96,8 +96,8 @@ const certification = () => {
         </Head>
         <Transitions />
         <main className='flex w-full flex-col items-center justify-center'>
-            <Layout className={'pt-16'}>
-                <AnimatedText text="Certification" className='text-6xl h-20 md:text-[35px] sm:text-[30px] xs:text-[30px]'/>
+            <Layout className={'pt-16 bg-purple'}>
+                <AnimatedText text="Certification" className='text-6xl h-20 md:text-[35px] sm:text-[30px] xs:text-[30px] text-light'/>
                 
                 <div className='mt-20 flex justify-between md:flex md:flex-col md:gap-8 sm:flex sm:flex-col sm:gap-8 xs:flex xs:flex-col xs:gap-8 md:mt-10 sm:mt-10 xs:mt-10 '>
                     <ul>
@@ -105,14 +105,14 @@ const certification = () => {
                         date = '[Dec 2022]'
                         img = {GoogleDA}/>
                     </ul>
-                    <ul className=''>
+                    <ul className=' ml-2'>
                         <Certificate title='Application of AI, Machine Vision and Robotics' 
                         date = '[Aug 2021]'
                         img = {Appofai}/>
                     </ul>
                 </div>
 
-                <h2 className='text-bold text-4xl w-full text-center mt-20 mb-16 md:text-3xl sm:text-2xl xs:text-2xl md:mb-10 sm:mb-10 xs:mb-10'>All Certificates..</h2>
+                <h2 className='text-bold text-4xl w-full text-center mt-20 mb-16 md:text-3xl sm:text-2xl xs:text-2xl md:mb-10 sm:mb-10 xs:mb-10 text-light'>All Certificates..</h2>
 
                 <ul>
                     <CertiLine 
