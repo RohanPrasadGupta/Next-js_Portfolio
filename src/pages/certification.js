@@ -63,7 +63,7 @@ const CertiLine = ({title,date,img,link})=>{
             initial={{y:200}}
             whileInView = {{y:0, transition:{duration:0.5, ease:'easeInOut'}}}
             viewport={{once:true}}
-            className='relative w-full p-4 py-4 mt-4 rounded-xl flex items-center justify-between bg-light/50 text-light/80 first:mt-0 border border-solid border-light/50 border-r-4 border-b-4 md:text-sm xs:text-sm sm:text-sm'>
+            className='relative w-full p-4 py-4 mt-4 rounded-xl flex items-center justify-between bg-light/50 text-primary/80 first:mt-0 border border-solid border-light/50 border-r-4 border-b-4 md:text-sm xs:text-sm sm:text-sm'>
                 <MovingImage title={title} img = {img} link = {link}/>
                 <span className='text-dark/80 font-semibold pl-4 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
             </motion.li>
@@ -96,7 +96,7 @@ const certification = () => {
         </Head>
         <Transitions />
         <main className='flex w-full flex-col items-center justify-center'>
-            <Layout className={'pt-16 bg-purple'}>
+            <Layout className={'pt-16 bg-gradient-to-tr from-green-400 to-blue-400'}>
                 <AnimatedText text="Certification" className='text-6xl h-20 md:text-[35px] sm:text-[30px] xs:text-[30px] text-light'/>
                 
                 <div className='mt-20 flex justify-between md:flex md:flex-col md:gap-8 sm:flex sm:flex-col sm:gap-8 xs:flex xs:flex-col xs:gap-8 md:mt-10 sm:mt-10 xs:mt-10 '>

@@ -54,7 +54,7 @@ const NavBar = () => {
 
   return (
     <header
-    className='w-full px-32 py-6 font-medium flex item-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-8 border-b-4 '>
+    className='w-full px-32 py-6 font-medium flex item-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-8  bg-gradient-to-tr to-green-400 from-blue-300 '>
 
         <button className='flex-col justify-center items-center hidden lg:flex' onClick = {handleClick}>
             <span className={`bg-light dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -62,7 +62,7 @@ const NavBar = () => {
             <span className= {`bg-light dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
         </button>
 
-        <div className='w-full flex justify-between items-center lg:hidden text-light font-semibold text-lg '>
+        <div className='w-full flex  justify-between items-center lg:hidden text-light font-semibold text-lg '>
         <nav >
             <CustomLink href='/' title = 'Home' className='mr-4'/>
             <CustomLink href='/about' title = 'About' className='mx-4' />

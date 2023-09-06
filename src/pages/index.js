@@ -16,8 +16,8 @@ export default function Home() {
       </Head>
       <Transitions/>
       <main className="flex item-center text-dark  w-full min-h-hscreen">
-        <Layout className="pt-0 md:pt-16 sm:pt-8 bg-purple ">
-          <div className="flex item-center justify-between w-full lg:flex-col">
+        <Layout className="pt-0 md:pt-16 sm:pt-8  bg-gradient-to-tr from-green-400 to-blue-400 ">
+          <div className="flex item-center justify-between w-full lg:flex-col mt-6">
             <div className="w-1/2 md:w-full">
               <Image
                 src={profilepic}

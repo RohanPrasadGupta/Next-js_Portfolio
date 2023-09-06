@@ -60,7 +60,7 @@ const Projects = () => {
       </Head>
       <Transitions />
       <main className='w-full mb-16 flex flex-col items-center justify-center'>
-        <Layout className='pt-16 bg-purple'>
+        <Layout className='pt-16 bg-gradient-to-tr from-green-400 to-blue-400'>
           <AnimatedText text="Projects" className='text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px] text-light' />
 
           <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>

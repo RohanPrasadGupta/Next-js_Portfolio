@@ -42,7 +42,7 @@ const Education = () => {
     </Head>
     <Transitions />
     <main>
-    <Layout className='bg-purple'>
+    <Layout className='bg-gradient-to-tr from-green-400 to-blue-400'>
     <div className='my-[-50px]  items-center '>
     <AnimatedText text="Education" className='font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl xs:text-5xl text-light' />
         

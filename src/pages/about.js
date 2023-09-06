@@ -18,7 +18,7 @@ const About = () => {
       <Transitions />
 
       <main className="flex w-full flex-col items-center justify-center">
-        <Layout className={"p-16 pt-10 bg-purple"}>
+        <Layout className={"p-16 pt-10 bg-gradient-to-tr from-green-400 to-blue-400"}>
           <AnimatedText
             text="Harnessing the Potential: A Passion for Ideas, Solutions and Coding!"
             className="mb-16 text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8 text-light/90"
