@@ -37,7 +37,7 @@ const Projects = () => {
         <h3 className='font-bold mt-8 text-primary md:text-sm xs:text-sm sm:text-sm '>
           {title} &nbsp;&nbsp;<span className='text-sm text-black/75 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
         </h3>
-        <p className='md:text-xs xs:text-xs sm:text-xs'>{summary}</p>
+        <p className='md:text-xs xs:text-xs sm:text-xs text-justify'>{summary}</p>
         <div className='flex my-4 items-center'>
           <Link href={linkGH} target='_blank'>
             <GithubIcon className=' h-[40px] w-[40px] mr-4 hover:scale-90  md:h-[30px] md:w-[30px] sm:h-[25px] sm:w-[25px] xs:h-[25px] xs:w-[25px]' />

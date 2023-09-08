@@ -21,7 +21,7 @@ const About = () => {
         <Layout className={"p-16 pt-10 bg-gradient-to-tr from-green-400 to-blue-400"}>
           <AnimatedText
             text="Harnessing the Potential: A Passion for Ideas, Solutions and Coding!"
-            className="mb-16 text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8 text-light/90"
+            className="mb-16 md:text-center text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8 text-light/90"
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 md:gap-8 xs:gap-8">
             <div className="col-span-3 flex  flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
@@ -29,13 +29,13 @@ const About = () => {
                 About-Me
               </h2>
 
-              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm text-light/90">
+              <p className="font-medium my-1 md:text-sm sm:text-sm xs:text-sm text-light/90 text-justify">
                 A Master's degree [AI and IoT] Computer Science Student. On my
                 way to transform the complicated tech ideas into user-friendly
                 websites.
               </p>
 
-              <p className="font-medium my-4 md:text-sm sm:text-sm xs:text-sm text-light/90">
+              <p className="font-medium my-2 md:text-sm sm:text-sm xs:text-sm text-light/90 text-justify">
                 With my skills in programming, data analytics, and web
                 development, I am excited to contribute to a team that values
                 innovation and continuous learning. I'm open for any
@@ -54,8 +54,8 @@ const About = () => {
               />
             </div>
 
-            <div className="col-span-2 flex-col text-center xl:col-span-8 xl:flex-row xl:text-center md:order-3 md:col-span-8 sm:text-center md:text-center xs:text-center md:flex-row sm:flex-row xs:flex-row md:flex sm:flex xs:flex md:justify-between md:items-center sm:justify-between sm:items-center xs:justify-between xs:items-center ">
-              <div className="my-20 flex-col">
+            <div className="col-span-2 flex-col text-center xl:col-span-8 xl:flex-row xl:text-center md:order-3 md:col-span-8 sm:text-center md:text-center xs:text-center md:flex-row sm:flex-col xs:flex-col md:flex sm:flex xs:flex md:justify-between md:items-center sm:justify-between sm:items-center xs:justify-between xs:items-center  ">
+              <div className="my-20 xs:my-1 md:my-1 flex-col">
                 <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
                   5+
                 </span>
@@ -64,7 +64,7 @@ const About = () => {
                 </h2>
               </div>
 
-              <div className="my-8flex-col">
+              <div className="my-8 flex-col md:my-1 xs:my-1">
                 <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
                   8+
                 </span>
@@ -72,8 +72,8 @@ const About = () => {
                   Skills
                 </h2>
               </div>
-              <div className="my-8 flex-col">
-                <span className="text-5xl p-4 md:text-5xl sm:text-5xl xs:text-5xl">&#128522;</span>
+              <div className="my-8 flex-col md:my-1 xs:my-1">
+                <span className="text-5xl p-4 md:text-5xl  sm:text-5xl  xs:text-5xl">&#128522;</span>
                 <h2 className="my-6 text-3xl font-medium capitalize text-light/90 md:text-2xl sm:text-xl xs:text-lg"> 
                   Happy to Help :)
                 </h2>

@@ -8,7 +8,7 @@ const Skill = () => {
       <h2 className="font-bold text-8xl text-center w-full mt-32 mb-20 md:text-7xl md:mb-10 sm:mb-10 sm:text-6xl xs:text-5xl xs:mb-10 md:mt-10 xs:mt-10 sm:mt-10  text-light underline underline-offset-auto ">Skills</h2>
 
       <div className="border-8 border-light/75 pb-20 rounded-3xl ">
-      <motion.div className="flex flex-wrap justify-center items-center text-center pt-20 md:pt-8  md:flex-col md:gap-3 sm:flex-col sm:gap-3 xs:flex-col xs:gap-3"
+      <motion.div className="flex flex-wrap justify-center items-center text-center pt-20 md:pt-8  md:flex-col md:col-span-3  md:gap-3 sm:flex-col sm:gap-3 xs:flex-col xs:gap-3"
       initial={{y:50}}
       whileInView={{y:0}}
       transition={{duration:1 , type:'spring'}}>

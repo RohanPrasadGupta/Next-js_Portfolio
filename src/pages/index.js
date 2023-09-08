@@ -22,7 +22,7 @@ export default function Home() {
               <Image
                 src={profilepic}
                 alt="ROHAN"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full border-solid border-2 border-light/75 rounded-2xl  shadow-2xl border-b-4 border-r-4  "
+                className=" w-auto h-auto lg:hidden md:inline-block md:w-full border-solid border-2 border-light/75 rounded-2xl shadow-2xl border-b-4 border-r-4  "
                 priority
                 sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw"
               />
@@ -31,7 +31,7 @@ export default function Home() {
             <div className="w-1/2 felx felx-col items-center self-center lg:w-full lg:text-center mx-4">
               <AnimatedText
                 text="[AI and IoT] Master's Degree student | Software Developer"
-                className="text-light/90 !text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
+                className="text-light/90 !text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl md:mt-4 sm:!text-3xl"
               />
 
               <p className="my-4 text-base font-medium md:!text-sm sm:!text-xs text-justify text-light/80">
