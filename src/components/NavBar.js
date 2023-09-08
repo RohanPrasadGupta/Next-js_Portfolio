@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import Logo from './Logo'
 import { useRouter } from 'next/router'
-import {TwitterIcon, DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, SunIcon } from './Icons'
+import { GithubIcon, LinkedInIcon} from './Icons'
 import {motion} from 'framer-motion'
 
 const CustomLink = ({href, title, className = ''})=>{
@@ -69,6 +68,7 @@ const NavBar = () => {
             <CustomLink href='/education' title = 'Education' className='mx-4'/>
             <CustomLink href='/projects' title = 'Projects' className='mx-4'/>
             <CustomLink href='/certification' title = 'Certification' className='ml-4'/>
+            <CustomLink href='/contactus' title = 'Contact Me' className='ml-4'/>
         </nav>
        
         <nav className='flex item-center justify-center flex-wrap'>
@@ -106,6 +106,7 @@ const NavBar = () => {
             <CustomMobileLink href='/education' title = 'Education' className=''toggle ={handleClick}/>
             <CustomMobileLink href='/projects' title = 'Projects' className=''toggle ={handleClick}/>
             <CustomMobileLink href='/certification' title = 'Certification' className='' toggle ={handleClick}/>
+            <CustomMobileLink href='/contactus' title = 'Contatc Me' className='' toggle ={handleClick}/>
         </nav>
        
         <nav className='flex item-center justify-center flex-wrap mt-2  '>

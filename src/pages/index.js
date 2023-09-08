@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="w-1/2 felx felx-col items-center self-center lg:w-full lg:text-center mx-4">
               <AnimatedText
-                text="[AI and IoT] Master's Degree student | Software Developer"
+                text="[ AI and IoT ] Master's Degree student | Software Developer"
                 className="text-light/90 !text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl md:mt-4 sm:!text-3xl"
               />
 
