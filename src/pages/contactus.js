@@ -1,15 +1,33 @@
 import Transitions from "@/components/Transitions";
 import Head from "next/head";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
+import Banner from "@/components/Banner";
 
 const contactus = () => {
+  const[NameText, setNameText] = useState();
+  const[EmailText, setEmailText] = useState();
+  const[MsgText, setMsgText] = useState();
+  const [bannerVisible, setBannerVisible] = useState(false);
+  const [bannerMessage, setBannerMessage] = useState("");
   const form = useRef();
+
+  const showBanner = (message) => {
+    setBannerMessage(message);
+    setBannerVisible(true);
+  
+    // Hide the banner after 3 seconds
+    setTimeout(() => {
+      setBannerVisible(false);
+      setBannerMessage("");
+    }, 3000);
+  };
+
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+  
     emailjs
       .sendForm(
         "service_709irtu",
@@ -20,13 +38,17 @@ const contactus = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setNameText('');
+          setEmailText('');
+          setMsgText('');
+          showBanner("Email sent successfully!"); // Show success banner
         },
         (error) => {
           console.log(error.text);
+          showBanner("Email sending failed."); // Show error banner
         }
       );
-    
-  };
+  }
 
   return (
     <>
@@ -36,8 +58,9 @@ const contactus = () => {
       </Head>
       <Transitions />
       <main>
+      {bannerVisible && <Banner message={bannerMessage} />}
 
-        <div className=" h-screen flex m-auto justify-between grid-cols-2 gap-6 mt-28 mb-0 p-2 md:flex-col md:justify-center md:ml-auto md:mt-0 md:mb-2">
+        <div className=" h-screen  flex m-auto justify-between grid-cols-2 gap-6 mt-28 mb-0 p-2 md:flex-col md:justify-center md:ml-auto md:mt-0 md:mb-2">
 
         <div className=" text-white font-mono mt-12 p-2 w-[50%] ml-[20%] md:justify-center">
         <p className="text-5xl underline underline-offset-2 md:text-2xl">Let's chat:</p>
@@ -57,17 +80,19 @@ const contactus = () => {
             <form ref={form} onSubmit={sendEmail} className="flex flex-col">
               
               <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Name:</label>
-              <input type="text" name="from_name" placeholder="Your Name" className="p-1 text-black mt-2 border-2 rounded-lg" />
+              <input type="text" name="from_name" placeholder="Your Name" className="p-1 text-black mt-2 border-2 rounded-lg" value={NameText} />
               
               <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Email:</label>
-              <input type="email" name="Sender_Email" placeholder="Your Email" className="p-1 text-black border-2 rounded-lg mt-2" />
+              <input type="email" name="Sender_Email" placeholder="Your Email" className="p-1 text-black border-2 rounded-lg mt-2" value={EmailText} />
 
               <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Message:</label>
-              <textarea name="message" placeholder="Comments..." className="p-1 border-2 text-black rounded-lg mt-2"/>
+              <textarea name="message" placeholder="Comments..." className="p-1 border-2 text-black rounded-lg mt-2" value={MsgText}/>
 
               <input type="submit" value="Send" className="mt-6 hover:cursor-pointer p-2 border-2 border-white text-3xl w-1/2 rounded-lg hover:bg-black/80 md:text-2xl xl:text-5xl lg:text-xl sm:text-2xl md:ml-[20%]" />
             </form>
-          
+            
+
+           
           </div>
           
         </div>
