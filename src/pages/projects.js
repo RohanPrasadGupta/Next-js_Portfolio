@@ -11,6 +11,8 @@ import spotify from "../../public/images/projects/spotifyclone.png";
 import mergedProj from "../../public/images/projects/mergerd-proj.png";
 import NewsPanda from "../../public/images/projects/NewsPanda.png";
 import OldPortfolio from "../../public/images/projects/OldPortfolio.png";
+import theCart from "../../public/images/projects/theCart.jpg";
+import spiceHaven from "../../public/images/projects/spiceHaven.jpg";
 import { motion } from "framer-motion";
 import Transitions from "@/components/Transitions";
 
@@ -77,7 +79,7 @@ const Projects = () => {
 
           <div className="grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
-              img={textproj}
+              img={spiceHaven}
               title="Real‑Time Restaurant Management Dashboard (Next.js + Node.js)"
               date="[ 2025 ]"
               summary="I developed a real-time restaurant management platform using Next.js, Node.js, Express, MongoDB, and Socket.IO. It supports role-based workflows for customers, staff, and admins, with dynamic menus, live order tracking, secure authentication, and analytics dashboards. The system ensures operational efficiency, responsive UI/UX, and synchronized data across devices for seamless restaurant operations."
@@ -85,7 +87,7 @@ const Projects = () => {
               linkGH="https://github.com/RohanPrasadGupta/resturant_mgr_frontend"
             />
             <FeatureProject
-              img={mergedProj}
+              img={theCart}
               title="E-Commerce Platform: Full-Stack Web Application [ THE CART ]"
               date="[ 2025 ]"
               summary="I built a full-stack e-commerce platform with Next.js, MongoDB, Redux, and REST APIs, featuring dynamic search, advanced filtering, inventory management, and secure authentication. Using Material UI, Tailwind, and Framer Motion, I focused on creating a responsive, user-friendly experience while ensuring real-time synchronization, scalability, and robust backend integration."
