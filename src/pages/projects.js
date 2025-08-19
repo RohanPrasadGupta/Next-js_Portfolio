@@ -1,56 +1,65 @@
-import AnimatedText from '@/components/AnimatedText'
-import { GithubIcon, LinkArrow } from '@/components/Icons'
-import Layout from '@/components/Layout'
-import Head from 'next/head'
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
+import AnimatedText from "@/components/AnimatedText";
+import { GithubIcon, LinkArrow } from "@/components/Icons";
+import Layout from "@/components/Layout";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 import textproj from "../../public/images/projects/textproject.png";
 import Opencv from "../../public/images/projects/Opencv.png";
 import spotify from "../../public/images/projects/spotifyclone.png";
-import mergedProj from '../../public/images/projects/mergerd-proj.png'
-import NewsPanda from '../../public/images/projects/NewsPanda.png'
-import OldPortfolio from '../../public/images/projects/OldPortfolio.png'
-import { motion } from 'framer-motion'
-import Transitions from '@/components/Transitions'
-
+import mergedProj from "../../public/images/projects/mergerd-proj.png";
+import NewsPanda from "../../public/images/projects/NewsPanda.png";
+import OldPortfolio from "../../public/images/projects/OldPortfolio.png";
+import { motion } from "framer-motion";
+import Transitions from "@/components/Transitions";
 
 const Projects = () => {
-
   const FramerImage = motion(Image);
 
-  const FeatureProject = ({ title, date, summary, link, linkGH,img }) => {
+  const FeatureProject = ({ title, date, summary, link, linkGH, img }) => {
     return (
-
       <div>
-       
-        <div className='content-center border-2 border-solid border-black/80 rounded-3xl p-3 relative bg-light/90'>
+        <div className="content-center border-2 border-solid border-black/80 rounded-3xl p-3 relative bg-light/90">
+          <div className="absolute top-1 -right-3 -z-10  w-[101%] h-[102%] rounded-[1rem] bg-light/60" />
 
-        <div className='absolute top-1 -right-3 -z-10  w-[101%] h-[102%] rounded-[1rem] bg-light/60' />
-                        
-        <FramerImage src = {img} alt={title} className='w-full h-full border-solid border-2 border-dark/75 rounded-2xl p-1 shadow-2xl '
-        whileHover={{scale:1.05}}
-        transition={{duration:0.2}}
-        prioritysizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'></FramerImage>
+          <FramerImage
+            src={img}
+            alt={title}
+            className="w-full h-full border-solid border-2 border-dark/75 rounded-2xl p-1 shadow-2xl "
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            prioritysizes="(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw"
+          ></FramerImage>
 
-        <div className=' flex flex-col items-start justify-between pl-6'>
-        <h3 className='font-bold mt-8 text-primary md:text-sm xs:text-sm sm:text-sm '>
-          {title} &nbsp;&nbsp;<span className='text-sm text-black/75 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
-        </h3>
-        <p className='md:text-xs xs:text-xs sm:text-xs text-justify'>{summary}</p>
-        <div className='flex my-4 items-center'>
-          <Link href={linkGH} target='_blank'>
-            <GithubIcon className=' h-[40px] w-[40px] mr-4 hover:scale-90  md:h-[30px] md:w-[30px] sm:h-[25px] sm:w-[25px] xs:h-[25px] xs:w-[25px]' />
-          </Link>
-          <Link href={link} target='_blank' className='flex item-center bg-dark text-light px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark md:text-sm xs:text-xs sm:text-sm h-20 p-3'>
-            View-Project<LinkArrow className='ml-4 w-5 h-4.5 sm:w-3 sm:h-3 md:w-3 md:h-3 xs:w-3 xs:h-3' />
-          </Link>
-        </div>
+          <div className=" flex flex-col items-start justify-between pl-6">
+            <h3 className="font-bold mt-8 text-primary md:text-sm xs:text-sm sm:text-sm ">
+              {title} &nbsp;&nbsp;
+              <span className="text-sm text-black/75 md:text-xs xs:text-xs sm:text-xs">
+                {date}
+              </span>
+            </h3>
+            <p className="md:text-xs xs:text-xs sm:text-xs text-justify">
+              {summary}
+            </p>
+            <div className="flex my-4 items-center">
+              <Link href={linkGH} target="_blank">
+                <GithubIcon className=" h-[40px] w-[40px] mr-4 hover:scale-90  md:h-[30px] md:w-[30px] sm:h-[25px] sm:w-[25px] xs:h-[25px] xs:w-[25px]" />
+              </Link>
+              <Link
+                href={link}
+                target="_blank"
+                className="flex item-center bg-dark text-light px-6 rounded-lg text-lg font-semibold hover:bg-light hover:underline hover:text-dark border-2 border-solid border-transparent hover:border-dark md:text-sm xs:text-xs sm:text-sm h-20 p-3"
+              >
+                View-Project
+                <LinkArrow className="ml-4 w-5 h-4.5 sm:w-3 sm:h-3 md:w-3 md:h-3 xs:w-3 xs:h-3" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -59,90 +68,94 @@ const Projects = () => {
         <meta name="description" content="Generated by create next app" />
       </Head>
       <Transitions />
-      <main className='w-full mb-16 flex flex-col items-center justify-center'>
-        <Layout className='pt-16 bg-gradient-to-tr from-green-400 to-blue-400'>
-          <AnimatedText text="Projects" className='text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px] text-light' />
+      <main className="w-full mb-16 flex flex-col items-center justify-center">
+        <Layout className="pt-16 bg-gradient-to-tr from-green-400 to-blue-400">
+          <AnimatedText
+            text="Projects"
+            className="text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px] text-light"
+          />
 
-          <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
-            
-            
+          <div className="grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
-                img={mergedProj}
-                title='Merged Projects using REACT-JS'
-                date='[ 2023 ]'
-                summary="Passionate ReactJS enthusiast 🚀 | Explored the world of APIs, useState, useEffect, and more 🌐 | Crafted a multifaceted project integrating a ToDo app, Weather app, Expenses Tracker, and Joke page 📊 | Eager to continue learning and building with JavaScript! 💡 #ReactJS #WebDevelopment #APIs #JavaScript."
-                link='https://rpg-merged-projects.netlify.app/'
-                linkGH='https://github.com/RohanPrasadGupta/Combined_Small_Project'
-              />
-            
-
-            
-              <FeatureProject
               img={textproj}
-                title='WORDS AND CHARACTER COUNTER WITH THEME CHANGING WEBSITE USING REACT JS'
-                date='[ Aug-2021 ]'
-                summary='A small project using React-JS. Words and character counter with various features like upper and lower case, copy modified text and speak the input text of the sentence. Can change the normal to dark theme'
-                link='https://rohanprasadgupta-react-text-project.netlify.app/'
-                linkGH='https://github.com/RohanPrasdGupta/React-TEXT_PROJECT-'
-              />
-            
-          
-            </div>
-
-            <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
-
-            
+              title="Real‑Time Restaurant Management Dashboard (Next.js + Node.js)"
+              date="[ 2025 ]"
+              summary="I developed a real-time restaurant management platform using Next.js, Node.js, Express, MongoDB, and Socket.IO. It supports role-based workflows for customers, staff, and admins, with dynamic menus, live order tracking, secure authentication, and analytics dashboards. The system ensures operational efficiency, responsive UI/UX, and synchronized data across devices for seamless restaurant operations."
+              link="https://mgr-frontend.netlify.app/pages/home"
+              linkGH="https://github.com/RohanPrasadGupta/resturant_mgr_frontend"
+            />
             <FeatureProject
-                img={spotify}
-                title='SIMPLE SPOTIFY CLONE'
-                date='[ 2023 ]'
-                summary="This is a one-page Spotify clone using basic HTML, CSS, and JavaScript. This project showcases my skills in front-end development and offers an interactive music streaming experience, complete with song previews and a visually appealing design. JavaScript adds a touch of magic, ensuring smooth transitions and real-time song updates for an immersive music-listening journey."
-                link='https://rpg-spotify-clone1.netlify.app/'
-                linkGH='https://github.com/RohanPrasdGupta/Simple_Spotify_CLONE/tree/main'
-                />
-
-           
-            
-            
+              img={mergedProj}
+              title="E-Commerce Platform: Full-Stack Web Application [ THE CART ]"
+              date="[ 2025 ]"
+              summary="I built a full-stack e-commerce platform with Next.js, MongoDB, Redux, and REST APIs, featuring dynamic search, advanced filtering, inventory management, and secure authentication. Using Material UI, Tailwind, and Framer Motion, I focused on creating a responsive, user-friendly experience while ensuring real-time synchronization, scalability, and robust backend integration."
+              link="https://rpg-ecommerce.netlify.app/pages/dashboard"
+              linkGH="https://github.com/RohanPrasadGupta/ecommerce-proj"
+            />
+          </div>
+          <div className="grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
-                img={Opencv}
-                title='FACE RECOGNITION ATTENDANCE SYSTEM'
-                date='[ 2023 ]'
-                summary="The system captures live video, detects and compares faces to mark attendance. Attendance data is and profile pictures are stored on Firebase in real time. Python, OpenCV, and MediaPipe were used for development."
-                link='https://github.com/RohanPrasdGupta/HW_PROJECT-TU-'
-                linkGH='https://github.com/RohanPrasdGupta/HW_PROJECT-TU-'
-                />
-            
-                </div>
+              img={mergedProj}
+              title="Merged Projects using REACT-JS"
+              date="[ 2023 ]"
+              summary="Passionate ReactJS enthusiast 🚀 | Explored the world of APIs, useState, useEffect, and more 🌐 | Crafted a multifaceted project integrating a ToDo app, Weather app, Expenses Tracker, and Joke page 📊 | Eager to continue learning and building with JavaScript! 💡 #ReactJS #WebDevelopment #APIs #JavaScript."
+              link="https://rpg-merged-projects.netlify.app/"
+              linkGH="https://github.com/RohanPrasadGupta/Combined_Small_Project"
+            />
 
-                <div className='grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex'>
-
-            
             <FeatureProject
-                img={NewsPanda}
-                title='NEWS PANDA'
-                date='[ 2023 ]'
-                summary="I have developed a NEWS PANDA website utilizing the newAPI infrastructure. The website's front-end was constructed using the React.js framework, with Bootstrap employed for its stylistic elements. Throughout the project's development, I acquired valuable experience in working with JavaScript, API integration, website styling, and advanced JavaScript features, including but not limited to useState, useEffect, setTimeout, and various other properties.
+              img={textproj}
+              title="WORDS AND CHARACTER COUNTER WITH THEME CHANGING WEBSITE USING REACT JS"
+              date="[ Aug-2021 ]"
+              summary="A small project using React-JS. Words and character counter with various features like upper and lower case, copy modified text and speak the input text of the sentence. Can change the normal to dark theme"
+              link="https://rohanprasadgupta-react-text-project.netlify.app/"
+              linkGH="https://github.com/RohanPrasdGupta/React-TEXT_PROJECT-"
+            />
+          </div>
+
+          <div className="grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
+            <FeatureProject
+              img={spotify}
+              title="SIMPLE SPOTIFY CLONE"
+              date="[ 2023 ]"
+              summary="This is a one-page Spotify clone using basic HTML, CSS, and JavaScript. This project showcases my skills in front-end development and offers an interactive music streaming experience, complete with song previews and a visually appealing design. JavaScript adds a touch of magic, ensuring smooth transitions and real-time song updates for an immersive music-listening journey."
+              link="https://rpg-spotify-clone1.netlify.app/"
+              linkGH="https://github.com/RohanPrasdGupta/Simple_Spotify_CLONE/tree/main"
+            />
+
+            <FeatureProject
+              img={Opencv}
+              title="FACE RECOGNITION ATTENDANCE SYSTEM"
+              date="[ 2023 ]"
+              summary="The system captures live video, detects and compares faces to mark attendance. Attendance data is and profile pictures are stored on Firebase in real time. Python, OpenCV, and MediaPipe were used for development."
+              link="https://github.com/RohanPrasdGupta/HW_PROJECT-TU-"
+              linkGH="https://github.com/RohanPrasdGupta/HW_PROJECT-TU-"
+            />
+          </div>
+
+          <div className="grid grid-flow-col  gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
+            <FeatureProject
+              img={NewsPanda}
+              title="NEWS PANDA"
+              date="[ 2023 ]"
+              summary="I have developed a NEWS PANDA website utilizing the newAPI infrastructure. The website's front-end was constructed using the React.js framework, with Bootstrap employed for its stylistic elements. Throughout the project's development, I acquired valuable experience in working with JavaScript, API integration, website styling, and advanced JavaScript features, including but not limited to useState, useEffect, setTimeout, and various other properties.
                 Regrettably, due to the unavailability of the API for production purposes, deployment to a production environment is not feasible without incurring additional costs. Nonetheless, the website functions seamlessly when hosted on a development server."
-                link='https://github.com/RohanPrasadGupta/news_app_reactJS'
-                linkGH='https://github.com/RohanPrasadGupta/news_app_reactJS'
-              />
+              link="https://github.com/RohanPrasadGupta/news_app_reactJS"
+              linkGH="https://github.com/RohanPrasadGupta/news_app_reactJS"
+            />
             <FeatureProject
-                img={OldPortfolio}
-                title='OLD PORTFOLIO WEBSITE'
-                date='[ 2021 ]'
-                summary="Old portfolio website deployed on w3space created using #Bootstrap #HTML #CSS"
-                link='https://rohanprasadgupta.w3spaces.com/'
-                linkGH='https://rohanprasadgupta.w3spaces.com/'
-              />
-              
-
-                </div>
-
+              img={OldPortfolio}
+              title="OLD PORTFOLIO WEBSITE"
+              date="[ 2021 ]"
+              summary="Old portfolio website deployed on w3space created using #Bootstrap #HTML #CSS"
+              link="https://rohanprasadgupta.w3spaces.com/"
+              linkGH="https://rohanprasadgupta.w3spaces.com/"
+            />
+          </div>
         </Layout>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
