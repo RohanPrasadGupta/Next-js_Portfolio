@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global background layering */
+body {
+	@apply bg-light dark:bg-dark text-dark dark:text-light antialiased transition-colors;
+	background-image: radial-gradient(at 20% 20%, rgba(99,102,241,0.12) 0, transparent 60%),
+		radial-gradient(at 80% 30%, rgba(16,185,129,0.12) 0, transparent 55%),
+		radial-gradient(at 50% 80%, rgba(236,72,153,0.10) 0, transparent 60%);
+	background-attachment: fixed;
+}
+
+.dark body {
+	background-image: radial-gradient(at 20% 20%, rgba(99,102,241,0.18) 0, transparent 60%),
+		radial-gradient(at 80% 30%, rgba(16,185,129,0.18) 0, transparent 55%),
+		radial-gradient(at 50% 80%, rgba(236,72,153,0.15) 0, transparent 60%);
+}
+

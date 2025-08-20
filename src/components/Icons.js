@@ -17,7 +17,6 @@ export const GithubIcon = ({ className, ...rest }) => (
   </svg>
 );
 
-
 // #0A66C2
 export const LinkedInIcon = ({ className, ...rest }) => (
   <svg
@@ -39,8 +38,6 @@ export const LinkedInIcon = ({ className, ...rest }) => (
     </g>
   </svg>
 );
-
-
 
 export const CircularText = ({ className, ...rest }) => (
   <svg
@@ -75,13 +72,8 @@ export const LinkArrow = ({ className, ...rest }) => (
   </svg>
 );
 
-
 export const PythonIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 48 48"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
     <path
       fill="#0277BD"
       d="M24.047 5c-1.555.005-2.633.142-3.936.367-3.848.67-4.549 2.077-4.549 4.67V14h9v2H10.87c-2.636 0-4.943 1.242-5.674 4.219-.826 3.417-.863 5.557 0 9.125C5.851 32.005 7.294 34 9.931 34h3.632v-5.104c0-2.966 2.686-5.896 5.764-5.896h7.236c2.523 0 5-1.862 5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672.061-.006-1.756-.371-3.298-.365zm-4.984 4c.821 0 1.5.677 1.5 1.502a1.5 1.5 0 0 1-1.5 1.498 1.49 1.49 0 0 1-1.5-1.498A1.5 1.5 0 0 1 19.063 9z"
@@ -94,11 +86,7 @@ export const PythonIcon = (props) => (
 );
 
 export const HTMLIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
     <title>{"file_type_html"}</title>
     <path
       d="M5.902 27.201 3.655 2h24.69l-2.25 25.197L15.985 30 5.902 27.201z"
@@ -127,7 +115,6 @@ export const HTMLIcon = (props) => (
   </svg>
 );
 
-
 export const CSSIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -144,13 +131,8 @@ export const CSSIcon = (props) => (
   </svg>
 );
 
-
 export const JavaScriptIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 48 48"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
     <path fill="#ffd600" d="M6 42V6h36v36H6z" />
     <path
       fill="#000001"
@@ -159,13 +141,8 @@ export const JavaScriptIcon = (props) => (
   </svg>
 );
 
-
 export const SQLIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
     <title>{"file_type_sql"}</title>
     <path
       d="M8.562 15.256A21.159 21.159 0 0 0 16 16.449a21.159 21.159 0 0 0 7.438-1.194c1.864-.727 2.525-1.535 2.525-2V9.7a10.357 10.357 0 0 1-2.084 1.076A22.293 22.293 0 0 1 16 12.078a22.36 22.36 0 0 1-7.879-1.3A10.28 10.28 0 0 1 6.037 9.7v3.55c0 .474.663 1.278 2.525 2.006ZM8.562 21.961a15.611 15.611 0 0 0 2.6.741 24.9 24.9 0 0 0 4.838.453 24.9 24.9 0 0 0 4.838-.452 15.614 15.614 0 0 0 2.6-.741c1.864-.727 2.525-1.535 2.525-2v-3.39a10.706 10.706 0 0 1-1.692.825A23.49 23.49 0 0 1 16 18.74a23.49 23.49 0 0 1-8.271-1.348 10.829 10.829 0 0 1-1.692-.825v3.393c0 .466.663 1.271 2.525 2.001ZM16 30c5.5 0 9.963-1.744 9.963-3.894v-2.837a10.5 10.5 0 0 1-1.535.762l-.157.063A23.487 23.487 0 0 1 16 25.445a23.422 23.422 0 0 1-8.271-1.351c-.054-.02-.106-.043-.157-.063a10.5 10.5 0 0 1-1.535-.762v2.837C6.037 28.256 10.5 30 16 30Z"
@@ -238,7 +215,6 @@ export const NextJSIcon = (props) => (
   </svg>
 );
 
-
 export const GitIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +232,6 @@ export const GitIcon = (props) => (
     />
   </svg>
 );
-
 
 export const DataAnaIcon = (props) => (
   <svg
@@ -360,4 +335,130 @@ export const DataAnaIcon = (props) => (
   </svg>
 );
 
+// Generic additional skill icons (simplified to avoid trademark logo complexity)
+export const TypeScriptIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#2d79c7" />
+    <text
+      x="50%"
+      y="55%"
+      textAnchor="middle"
+      fontFamily="Arial, Helvetica, sans-serif"
+      fontSize="26"
+      fontWeight="700"
+      fill="#fff"
+    >
+      TS
+    </text>
+  </svg>
+);
 
+export const TailwindIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#0f172a" />
+    <path
+      fill="#38bdf8"
+      d="M20 30c2.5-8 7.5-12 15-12 11.25 0 13.125 9 19.5 10.5-2.5 8-7.5 12-15 12-11.25 0-13.125-9-19.5-10.5Z"
+    />
+    <path
+      fill="#38bdf8"
+      opacity=".6"
+      d="M10 42c2.5-8 7.5-12 15-12 11.25 0 13.125 9 19.5 10.5-2.5 8-7.5 12-15 12-11.25 0-13.125-9-19.5-10.5Z"
+    />
+  </svg>
+);
+
+export const NodeIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M32 4 8 16v32l24 12 24-12V16L32 4Z" fill="#3c873a" />
+    <text
+      x="50%"
+      y="57%"
+      textAnchor="middle"
+      fontFamily="Arial, Helvetica, sans-serif"
+      fontSize="20"
+      fontWeight="700"
+      fill="#fff"
+    >
+      N
+    </text>
+  </svg>
+);
+
+export const AWSIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#232f3e" />
+    <text
+      x="50%"
+      y="55%"
+      textAnchor="middle"
+      fontFamily="Arial, Helvetica, sans-serif"
+      fontSize="22"
+      fontWeight="700"
+      fill="#ff9900"
+    >
+      AWS
+    </text>
+  </svg>
+);
+
+export const MongoIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#0f2212" />
+    <path
+      d="M32 54s10-9 10-22C42 20 32 10 32 10s-10 10-10 22c0 13 10 22 10 22Z"
+      fill="#4caf50"
+    />
+    <path d="M32 54c3-6 6-13 6-22 0-9-3-16-6-22v44Z" fill="#81c784" />
+  </svg>
+);
+
+export const ReduxIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#1f1f29" />
+    <path
+      fill="#764abc"
+      d="M32 18c-7.732 0-14 5.82-14 13 0 4.814 2.78 9.06 7 11.36.35 3.51-1.4 5.64-4 6.64 5 2 11 1 13-5 7.732 0 14-5.82 14-13S39.732 18 32 18Z"
+    />
+  </svg>
+);
+
+export const GraphQLIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#1a1033" />
+    <path
+      stroke="#e535ab"
+      strokeWidth="4"
+      fill="none"
+      d="m18 22 14-8 14 8v16l-14 8-14-8V22Z"
+    />
+    <circle cx="32" cy="14" r="4" fill="#e535ab" />
+    <circle cx="32" cy="50" r="4" fill="#e535ab" />
+    <circle cx="18" cy="22" r="4" fill="#e535ab" />
+    <circle cx="18" cy="38" r="4" fill="#e535ab" />
+    <circle cx="46" cy="22" r="4" fill="#e535ab" />
+    <circle cx="46" cy="38" r="4" fill="#e535ab" />
+  </svg>
+);
+
+export const DockerIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#0b3d91" />
+    <rect x="14" y="30" width="8" height="8" fill="#fff" />
+    <rect x="24" y="30" width="8" height="8" fill="#fff" />
+    <rect x="34" y="30" width="8" height="8" fill="#fff" />
+    <rect x="24" y="20" width="8" height="8" fill="#fff" />
+    <rect x="34" y="20" width="8" height="8" fill="#fff" />
+    <rect x="34" y="10" width="8" height="8" fill="#fff" opacity=".6" />
+    <path fill="#fff" d="M14 40h36c0 6-5 10-12 10H24C17 50 14 46 14 40Z" />
+  </svg>
+);
+
+export const FramerMotionIcon = (props) => (
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#121212" />
+    <path fill="#e91e63" d="M18 10h28v16H34L18 10Z" />
+    <path fill="#9c27b0" d="M18 26h16l12 12H30L18 26Z" />
+    <path fill="#673ab7" d="M30 38h16v16L30 38Z" />
+  </svg>
+);

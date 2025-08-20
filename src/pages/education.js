@@ -44,11 +44,11 @@ const Education = () => {
       </Head>
       <Transitions />
       <main>
-        <Layout className="bg-gradient-to-tr from-green-400 to-blue-400">
-          <div className="my-[-50px]  items-center ">
+        <Layout>
+          <div className="items-center">
             <AnimatedText
               text="Education"
-              className="font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl md:my-12 xs:text-5xl text-light"
+              className="font-bold text-7xl text-center w-full mb-16 sm:text-5xl md:text-6xl md:my-10 xs:text-4xl text-dark dark:text-light"
             />
 
             <div
@@ -57,7 +57,7 @@ const Education = () => {
             >
               <motion.div
                 style={{ scaleY: scrollYProgress }}
-                className="bg-dark origin-top w-[4px] h-full left-9 absolute top-1"
+                className="bg-dark dark:bg-light origin-top w-[3px] h-full left-9 absolute top-1"
               />
 
               <ul>
@@ -93,8 +93,8 @@ const Education = () => {
               </ul>
             </div>
             <AnimatedText
-              text="A good education gives you the knowledge, and skills give you the confidence to succeed...."
-              className="mt-40 text-light/90 md:m-6 xs:mt-20 sm:mt-20"
+              text="Learning compounds – foundation empowers innovation."
+              className="mt-28 text-dark/70 dark:text-light/70 md:mt-16 xs:mt-16 sm:mt-16"
             />
           </div>
         </Layout>

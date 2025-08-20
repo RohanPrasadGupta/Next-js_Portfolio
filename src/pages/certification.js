@@ -1,161 +1,118 @@
-import React, { useRef } from 'react'
-import Head from 'next/head'
-import Layout from '@/components/Layout'
-import AnimatedText from '@/components/AnimatedText'
-import GoogleDA from "../../public/images/projects/GoogleDA.png";
-import Appofai from "../../public/images/projects/TaiwanAI.jpg";
-import AiPowChatbot from "../../public/images/projects/AiPowChatbot.jpg";
-import IntroToAi from "../../public/images/projects/IntroToAi.jpg";
-import PythonForDS from "../../public/images/projects/PythonForDS.jpg";
-import udemyPY from "../../public/images/projects/udemyPY.jpg";
-import UiUx from "../../public/images/projects/UiUx.jpg";
-import Image from 'next/image'
-import { motion, motionValue, useMotionValue } from 'framer-motion'
-import Link from 'next/link';
-import Transitions from '@/components/Transitions';
+import React from "react";
+import Head from "next/head";
+import Layout from "@/components/Layout";
+import AnimatedText from "@/components/AnimatedText";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Transitions from "@/components/Transitions";
+import { certifications } from "@/data/certificationsData";
 
+const MotionImage = motion(Image);
 
-const FramerImage = motion(Image);
+const FeaturedCard = ({ cert, i }) => (
+  <motion.article
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.4 }}
+    transition={{ duration: 0.5, delay: i * 0.05 }}
+    className="group relative flex flex-col overflow-hidden rounded-lg border border-black/10 dark:border-light/10 bg-white/60 dark:bg-dark/60 backdrop-blur-sm shadow-sm hover:shadow-md transition max-w-[230px] w-full"
+  >
+    <div className="relative aspect-[16/10] w-full overflow-hidden">
+      <MotionImage
+        src={cert.image}
+        alt={cert.title}
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+        priority={i < 2}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60" />
+      <span className="absolute top-2 left-2 rounded bg-black/50 px-2 py-0.5 text-[10px] font-medium text-light backdrop-blur-sm">
+        {cert.provider}
+      </span>
+      <span className="absolute bottom-2 right-2 rounded bg-black/50 px-2 py-0.5 text-[10px] font-semibold text-light backdrop-blur-sm">
+        {cert.date}
+      </span>
+    </div>
+    <div className="flex flex-col p-3">
+      <h3 className="text-[12px] font-semibold text-dark dark:text-light group-hover:text-primary transition-colors line-clamp-2">
+        {cert.title}
+      </h3>
+    </div>
+  </motion.article>
+);
 
-const MovingImage = ({title,img,link})=>{
+const ListItem = ({ cert, i }) => (
+  <motion.li
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.4, delay: i * 0.04 }}
+    className="group relative flex items-start gap-3 rounded-md border border-black/5 dark:border-light/10 bg-white/40 dark:bg-dark/40 backdrop-blur-sm px-4 py-3 hover:bg-white/60 dark:hover:bg-dark/60 transition"
+  >
+    <div className="flex flex-col min-w-0">
+      <h4 className="text-xs font-semibold text-dark dark:text-light group-hover:text-primary transition-colors line-clamp-2">
+        {cert.title}
+      </h4>
+      <p className="mt-1 text-[10px] text-dark/60 dark:text-light/60 font-medium flex items-center gap-2">
+        <span>{cert.provider}</span>
+        <span className="inline-block h-1 w-1 rounded-full bg-dark/30 dark:bg-light/40" />
+        <span>{cert.date}</span>
+      </p>
+    </div>
+  </motion.li>
+);
 
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-    const imgRef = useRef(null);
+const CertificationPage = () => {
+  const featured = certifications.filter((c) => c.featured);
+  const others = certifications.filter((c) => !c.featured);
 
-    function handleMouse(event){
-        imgRef.current.style.display = "inline-block";
-        x.set(event.pageX);
-        y.set(-10);
-    }
-    
-    function handleMouseLeave(event){
-        imgRef.current.style.display = 'none';
-        x.set(0);
-        y.set(0);
-
-    }
-
-    return(
-        <Link href={link} target='_blank'
-        onMouseMove={handleMouse}
-        onMouseLeave={handleMouseLeave}>
-                <h2 className='capitalize font-semibold hover:underline'>{title}</h2>
-
-                <FramerImage 
-                style={{x:x,y:y}}
-                initial={{opacity:1}} 
-                whileInView={{opacity:1, transition:{duration:0.2}}} 
-                ref={imgRef}
-                src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-10'
-                priority
-              sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw , 50vw'></FramerImage>        
-        </Link>
-        
-    )
-
-}
-
-
-const CertiLine = ({title,date,img,link})=>{
-    return(
-            <motion.li 
-            initial={{y:200}}
-            whileInView = {{y:0, transition:{duration:0.5, ease:'easeInOut'}}}
-            viewport={{once:true}}
-            className='relative w-full p-4 py-4 mt-4 rounded-xl flex items-center justify-between bg-light/50 text-primary/80 first:mt-0 border border-solid border-light/50 border-r-4 border-b-4 md:text-sm xs:text-sm sm:text-sm'>
-                <MovingImage title={title} img = {img} link = {link}/>
-                <span className='text-dark/80 font-semibold pl-4 md:text-xs xs:text-xs sm:text-xs'>{date}</span>
-            </motion.li>
-    )
-}
-
-const Certificate = ({img,date,title}) =>{
-    return(
-        <li className='content-center w-full border-2 border-solid border-black/80 rounded-3xl p-3 relative bg-light border-r-8 border-b-8'>
-
-        <div className='item-center p-3 rounded-2xl shadow-2xl '>
-            <FramerImage src={img} alt= {title} className='mb-4 w-full h-full border-solid border-2 border-dark/80 shadow-2xl rounded-2xl p-1 '
-            whileHover={{scale:1.05}}
-            transition={{duration:0.2}}></FramerImage>
-            
-            <div className='border-2 border-black rounded-2xl'>
-            <h3 className='font-bold text-black pt-0 m-4 hover:underline md:text-sm xs:text-sm sm:text-sm'>{title} <span className='text-sm text-primary md:text-xs xs:text-xs sm:text-xs'>{date}</span></h3>
-            </div>
-        </div>
-        </li>
-    )
-}
-
-const certification = () => {
   return (
     <>
-        <Head>
-            <title>ROHAN PRASAD GUPTA | Certification page</title>
-            <meta name="description" content="Generated by create next app" />
-        </Head>
-        <Transitions />
-        <main className='flex w-full flex-col items-center justify-center'>
-            <Layout className={'pt-16 bg-gradient-to-tr from-green-400 to-blue-400'}>
-                <AnimatedText text="Certification" className='text-6xl h-20 md:text-[35px] sm:text-[30px] xs:text-[30px] text-light'/>
-                
-                <div className='mt-20 flex justify-between md:flex md:flex-col md:gap-8 sm:flex sm:flex-col sm:gap-8 xs:flex xs:flex-col xs:gap-8 md:mt-10 sm:mt-10 xs:mt-10 '>
-                    <ul>
-                        <Certificate title='Google / Data Analytics Professional Certificate' 
-                        date = '[Dec 2022]'
-                        img = {GoogleDA}/>
-                    </ul>
-                    <ul className=' ml-2'>
-                        <Certificate title='Application of AI, Machine Vision and Robotics' 
-                        date = '[Aug 2021]'
-                        img = {Appofai}/>
-                    </ul>
-                </div>
+      <Head>
+        <title>Certifications | Rohan Prasad Gupta</title>
+        <meta
+          name="description"
+          content="Professional certifications in data analytics, AI, Python, UI/UX and more."
+        />
+      </Head>
+      <Transitions />
+      <main className="flex w-full flex-col items-center justify-center pb-24">
+        <Layout className="pt-14">
+          <AnimatedText
+            text="Certifications"
+            className="mb-12 text-6xl text-dark dark:text-light md:text-5xl sm:text-4xl"
+          />
 
-                <h2 className='text-bold text-4xl w-full text-center mt-20 mb-16 md:text-3xl sm:text-2xl xs:text-2xl md:mb-10 sm:mb-10 xs:mb-10 text-light'>All Certificates..</h2>
+          {!!featured.length && (
+            <section>
+              <h2 className="mb-5 text-sm font-semibold uppercase tracking-wider text-dark/60 dark:text-light/60">
+                Featured
+              </h2>
+              <div className="flex  sm:flex-row flex-wrap items-stretch justify-center sm:justify-start gap-6 sm:gap-6">
+                {featured.map((c, i) => (
+                  <FeaturedCard key={c.slug} cert={c} i={i} />
+                ))}
+              </div>
+            </section>
+          )}
 
-                <ul>
-                    <CertiLine 
-                    title='"Building AI Powered Chatbots using IBM
-                    Watson” from COURSERA'
-                    img = {AiPowChatbot}
-                    date = '[Jul 2020]'
-                    link = '/' />
-
-                    <CertiLine 
-                    title='"Introduction to Artificial Intelligence (AI)” from COURSERA'
-                    img = {IntroToAi}
-                    date = ' [Jul 2020]'
-                    link = '/' />
-                    
-                    <CertiLine 
-                    title='“Learn to code in PYTHON 3” online course
-                    from UDEMY'
-                    img = {PythonForDS}
-                    date = '[Mar 2020]'
-                    link = '/' />
-                    
-                    <CertiLine 
-                    title='“Python for Data Science and AI” online
-                    course from COURSERA'
-                    img = {udemyPY}
-                    date = ' [Jul 2020]'
-                    link = '/' />
-
-                    <CertiLine 
-                    title='“Adobe-XD UI/UX design” online course
-                    from UDEMY'
-                    img = {UiUx}
-                    date = ' [Jan 2020]'
-                    link = '/' />
-                </ul>
-
-
-            </Layout>
-        </main>
+          {!!others.length && (
+            <section className="mt-14">
+              <h2 className="mb-4 text-xs font-semibold uppercase tracking-wider text-dark/60 dark:text-light/60">
+                Additional Certificates
+              </h2>
+              <ul className="flex flex-col gap-3">
+                {others.map((c, i) => (
+                  <ListItem key={c.slug} cert={c} i={i} />
+                ))}
+              </ul>
+            </section>
+          )}
+        </Layout>
+      </main>
     </>
-    
-  )
-}
+  );
+};
 
-export default certification
+export default CertificationPage;

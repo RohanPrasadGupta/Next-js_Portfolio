@@ -19,21 +19,20 @@ const Details = ({
         whileInView={{ y: 0 }}
         transition={{ duration: 1, type: "keyframes" }}
       >
-        <h3 className="capitalize font-bold text-2xl md:text-xl sm:text-lg xs:text-base text-light/80">
+        <h3 className="capitalize font-bold text-2xl md:text-xl sm:text-lg xs:text-base text-dark dark:text-light">
           {position}&nbsp;
           <a
             href={companyLink}
             target="_blank"
-            className="text-yellow/80 capitalize"
+            className="text-yellow/70 dark:text-yellow/60 hover:underline transition-colors capitalize"
           >
             @{company}
           </a>
         </h3>
-        <span className="capitalize text-dark/85 md:text-sm xs:text-sm sm:text-sm">
+        <span className="capitalize text-dark/70 dark:text-light/70 md:text-sm xs:text-sm sm:text-sm">
           {time} | {address}
         </span>
-
-        <p className="font-medium w-full mt-3 text-light/75  md:text-sm xs:text-sm sm:text-sm">
+        <p className="font-medium w-full mt-3 text-dark/70 dark:text-light/70 md:text-sm xs:text-sm sm:text-sm">
           {description}
         </p>
       </motion.div>
@@ -49,13 +48,13 @@ const Experience = () => {
 
   return (
     <div className="my-24 md:my-28  sm:my-28 xs:my-28 ">
-      <h2 className="font-bold text-8xl text-light/95 text-center w-full mb-32 md:text-7xl sm:text-6xl xs:text-5xl md:mb-20 sm:mb-20 xs:mb-20 ">
+      <h2 className="font-bold text-8xl text-dark dark:text-light text-center w-full mb-32 md:text-7xl sm:text-6xl xs:text-5xl md:mb-20 sm:mb-20 xs:mb-20 ">
         Experience
       </h2>
       <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="bg-dark origin-top w-[4px] h-full left-9 absolute top-1"
+          className="bg-dark dark:bg-light/80 origin-top w-[4px] h-full left-9 absolute top-1 transition-colors"
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <Details

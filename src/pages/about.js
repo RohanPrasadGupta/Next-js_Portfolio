@@ -7,6 +7,7 @@ import Image from "next/image";
 import Skill from "@/components/Skill";
 import Experience from "@/components/Experience";
 import Transitions from "@/components/Transitions";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -18,77 +19,113 @@ const About = () => {
       <Transitions />
 
       <main className="flex w-full flex-col items-center justify-center">
-        <Layout
-          className={"p-16 pt-10 bg-gradient-to-tr from-green-400 to-blue-400"}
-        >
+        <Layout className="pt-10">
           <AnimatedText
-            text="Harnessing the Potential: A Passion for Ideas, Solutions and Coding!"
-            className="mb-16 md:text-center text-4xl lg:text-!7xl sm:!text-6xl xs:!text-4xl sm:mb-8 text-light/90"
+            text="Building Thoughtful Software With Impact."
+            className="mb-16 md:mb-12 md:text-center text-5xl lg:text-6xl sm:!text-4xl xs:!text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple to-primaryDark"
           />
-          <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 md:gap-8 xs:gap-8">
-            <div className="col-span-3 flex  flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
-              <h2 className="mb-4 text-lg font-bold uppercase text-light/75 underline underline-offset-2 md:text-base sm:text-base xs:text-sm">
-                About-Me
+
+          {/* Hero Split */}
+          <section className="grid grid-cols-12 gap-12 md:gap-8 sm:gap-6 items-start">
+            {/* Text */}
+            <div className="col-span-7 xl:col-span-7 lg:col-span-12 order-1 flex flex-col gap-6">
+              <h2 className="text-sm tracking-wider font-semibold uppercase text-dark/60 dark:text-light/60">
+                About Me
               </h2>
-
-              <p className="font-medium my-1 md:text-sm sm:text-sm xs:text-sm text-light/90 text-justify">
-                I’m Rohan Prasad Gupta, a Software Developer with a Master’s
-                degree in AI and IoT from SIIT, Thammasat University. Currently
-                working at RV Connex [Cynclair], I specialize in building
-                scalable and user-friendly applications using TypeScript,
-                Next.js, AWS, and Node.js.
+              <p className="text-sm md:text-[15px] leading-relaxed text-dark/80 dark:text-light/75">
+                I’m{" "}
+                <span className="font-semibold text-dark dark:text-light">
+                  Rohan Prasad Gupta
+                </span>
+                , a software developer crafting scalable, user‑centric
+                applications across web platforms & emerging systems. With a
+                Master’s in <strong>AI & IoT</strong> and hands‑on experience at{" "}
+                <strong>RV Connex (Cynclair)</strong>, I bridge modern frontend
+                engineering with robust backend & cloud practices.
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-dark/80 dark:text-light/75">
+                My toolkit spans{" "}
+                <strong>
+                  TypeScript, Next.js, React, Node.js, GraphQL, AWS, DevOps
+                  workflows
+                </strong>{" "}
+                and data‑driven problem solving. I enjoy shaping maintainable
+                architectures, elevating developer experience, and translating
+                complexity into simple, resilient interfaces.
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-dark/80 dark:text-light/75">
+                Beyond code, I value clarity, knowledge sharing, and iterative
+                refinement. I’ve mentored in academic settings, explored applied
+                AI, and built products that emphasize performance,
+                accessibility, and purposeful UX.
               </p>
 
-              <p className="font-medium my-2 md:text-sm sm:text-sm xs:text-sm text-light/90 text-justify">
-                With experience across web development, database programming,
-                cloud systems, and AI-driven solutions, I enjoy transforming
-                complex technical challenges into practical, accessible, and
-                impactful products. My background also includes developing
-                chatbots, working with Microsoft Power Platform, and creating
-                intuitive web experiences.
-              </p>
-            </div>
-
-            <div className=" col-span-3 relative h-max rounded-2xl border-4 border-solid border-dark/75 bg-light xl:col-span-4 md:order-1 md:col-span-8 sm:col-span-8 xs:col-span-8">
-              <div className="absolute top-0 -right-3 -z-10  w-[102%] h-[103%] rounded-[1rem] bg-light/75" />
-              <Image
-                src={profilepic}
-                alt="ROHAN"
-                className="w-full h-auto rounded-2xl "
-                priority
-                sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw , 33vw"
-              />
-            </div>
-
-            <div className="col-span-2 flex-col text-center xl:col-span-8 xl:flex-row xl:text-center md:order-3 md:col-span-8 sm:text-center md:text-center xs:text-center md:flex-row sm:flex-col xs:flex-col md:flex sm:flex xs:flex md:justify-between md:items-center sm:justify-between sm:items-center xs:justify-between xs:items-center  ">
-              <div className="my-20 xs:my-1 md:my-1 flex-col">
-                <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
-                  10+
-                </span>
-                <h2 className="my-10 text-3xl font-medium capitalize text-light/90 md:text-2xl sm:text-xl xs:text-lg">
-                  Projects
-                </h2>
-              </div>
-
-              <div className="my-8 flex-col md:my-1 xs:my-1">
-                <span className="bg-dark text-white p-4 rounded-full text-5xl font-bold md:text-4xl sm:text-3xl xs:text-2xl">
-                  18+
-                </span>
-                <h2 className="my-10 text-3xl font-medium capitalize text-light/90 xs:text-lg md:text-2xl sm:text-xl">
-                  Skills
-                </h2>
-              </div>
-              <div className="my-8 flex-col md:my-1 xs:my-1">
-                <span className="text-5xl p-4 md:text-5xl  sm:text-5xl  xs:text-5xl">
-                  &#128522;
-                </span>
-                <h2 className="my-6 text-3xl font-medium capitalize text-light/90 md:text-2xl sm:text-xl xs:text-lg">
-                  Happy to Help :)
-                </h2>
+              {/* Focus Areas */}
+              <div>
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-dark/55 dark:text-light/60 mb-3">
+                  Focus Areas
+                </h3>
+                <ul className="flex flex-wrap gap-2">
+                  {[
+                    "Full‑Stack Engineering",
+                    "Design Systems",
+                    "Real‑Time Apps",
+                    "Cloud & DevOps",
+                    "AI Integration",
+                    "Data Visualization",
+                    "API Architecture",
+                    "Performance",
+                  ].map((tag) => (
+                    <li
+                      key={tag}
+                      className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-dark/5 dark:bg-light/10 text-dark/70 dark:text-light/70 border border-dark/10 dark:border-light/10 backdrop-blur-sm"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
 
+            {/* Photo & Stats */}
+            <div className="col-span-5 xl:col-span-5 lg:col-span-12 order-2 flex flex-col gap-8">
+              <div className="relative group w-full max-w-md mx-auto">
+                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-primary/50 via-purple/40 to-primaryDark/50 blur opacity-60 group-hover:opacity-80 transition" />
+                <div className="relative rounded-2xl overflow-hidden border border-black/10 dark:border-light/10 bg-white/60 dark:bg-dark/60 backdrop-blur-sm shadow-md">
+                  <Image
+                    src={profilepic}
+                    alt="Portrait of Rohan Prasad Gupta"
+                    className="w-full h-auto object-cover"
+                    priority
+                    sizes="(max-width:768px) 100vw, (max-width:1200px) 40vw, 33vw"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-4 md:gap-3 w-full max-w-md mx-auto">
+                {[
+                  { label: "Projects", value: "10+" },
+                  { label: "Skills", value: "18+" },
+                  { label: "Years Learning", value: "5+" },
+                ].map((card) => (
+                  <motion.div
+                    key={card.label}
+                    whileHover={{ y: -4 }}
+                    className="flex flex-col items-center justify-center rounded-xl bg-white/60 dark:bg-dark/60 backdrop-blur border border-black/10 dark:border-light/10 px-2 py-4 shadow-sm"
+                  >
+                    <span className="text-xl font-bold text-dark dark:text-light">
+                      {card.value}
+                    </span>
+                    <span className="mt-1 text-[11px] font-medium tracking-wide text-dark/60 dark:text-light/60 text-center">
+                      {card.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+          {/* Craft Philosophy section removed as requested */}
+
+          {/* Skills & Experience */}
           <Skill />
           <Experience />
         </Layout>

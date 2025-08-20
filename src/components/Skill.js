@@ -1,57 +1,85 @@
 import React from "react";
-import { CSSIcon, DataAnaIcon, GitIcon, HTMLIcon, JavaScriptIcon, NextJSIcon, PythonIcon, ReactIcon, SQLIcon, XDIcon } from "./Icons";
-import {motion} from 'framer-motion'
+import {
+  CSSIcon,
+  DataAnaIcon,
+  GitIcon,
+  HTMLIcon,
+  JavaScriptIcon,
+  NextJSIcon,
+  PythonIcon,
+  ReactIcon,
+  SQLIcon,
+  XDIcon,
+  TypeScriptIcon,
+  TailwindIcon,
+  NodeIcon,
+  AWSIcon,
+  MongoIcon,
+  ReduxIcon,
+  GraphQLIcon,
+  DockerIcon,
+  FramerMotionIcon,
+} from "./Icons";
+import { motion } from "framer-motion";
+
+const skills = [
+  { name: "Python", Icon: PythonIcon },
+  { name: "TypeScript", Icon: TypeScriptIcon },
+  { name: "JavaScript", Icon: JavaScriptIcon },
+  { name: "React", Icon: ReactIcon },
+  { name: "Next.js", Icon: NextJSIcon },
+  { name: "Node.js", Icon: NodeIcon },
+  { name: "Tailwind", Icon: TailwindIcon },
+  { name: "CSS", Icon: CSSIcon },
+  { name: "HTML", Icon: HTMLIcon },
+  { name: "SQL", Icon: SQLIcon },
+  { name: "MongoDB", Icon: MongoIcon },
+  { name: "Redux", Icon: ReduxIcon },
+  { name: "GraphQL", Icon: GraphQLIcon },
+  { name: "AWS", Icon: AWSIcon },
+  { name: "Docker", Icon: DockerIcon },
+  { name: "Framer Motion", Icon: FramerMotionIcon },
+  { name: "Git", Icon: GitIcon },
+  { name: "Data Analytics", Icon: DataAnaIcon },
+  { name: "UI/UX (XD)", Icon: XDIcon },
+];
 
 const Skill = () => {
   return (
-    <>
-      <h2 className="font-bold text-8xl text-center w-full mt-32 mb-20 md:text-7xl md:mb-10 sm:mb-10 sm:text-6xl xs:text-5xl xs:mb-10 md:mt-10 xs:mt-10 sm:mt-10  text-light underline underline-offset-auto ">Skills</h2>
-
-      <div className="border-8 border-light/75 pb-20 rounded-3xl ">
-      <motion.div className="flex flex-wrap justify-center items-center text-center pt-20 md:pt-8  md:flex-col md:col-span-3  md:gap-3 sm:flex-col sm:gap-3 xs:flex-col xs:gap-3"
-      initial={{y:50}}
-      whileInView={{y:0}}
-      transition={{duration:1 , type:'spring'}}>
-        <div>
-          <PythonIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 `} />
-        </div>
-        <div>
-          <HTMLIcon className={`w-20 h-20 shadow-2xl bg-light/30 mx-20 rounded-2xl sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 p-1 `} />
-        </div>
-        <div>
-          <CSSIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 p-1`} />
-        </div>
-        <div>
-          <JavaScriptIcon className={`w-20 h-20 shadow-2xl bg-light/30 mx-20 sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 rounded-2xl`} />
-        </div>
-        <div>
-          <SQLIcon className={`w-20 h-20 shadow-2xl rounded-2xl bg-light/30 sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 `} />
-        </div>
-      </motion.div>
-
-      <motion.div className="items-center flex flex-wrap justify-center pt-10 md:pt-4 sm:pt-4 xs:pt-4 text-center md:flex-col md:gap-3"
-      initial={{y:50}}
-      whileInView={{y:0}}
-      transition={{duration:1 , type:'spring'}}>
-        
-        <div>
-          <XDIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 p-2`} />
-        </div>
-        <div>
-          <ReactIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 mx-20`} />
-        </div>
-        <div>
-          <NextJSIcon className={`w-20 h-20 shadow-2xl bg-light/30 p-2 rounded-2xl  sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16`} />
-        </div>
-        <div>
-          <GitIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl mx-20  sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 p-1`} />
-        </div>
-        <div>
-          <DataAnaIcon className={`w-20 h-20 shadow-2xl bg-light/30 rounded-2xl  sm:w-16 sm:h-16 md:w-16 md:h-16 xs:w-16 xs:h-16 p-1`} />
-        </div>
-      </motion.div>
-      </div>
-    </>
+    <section className="mt-32 md:mt-24">
+      <h2 className="font-bold text-6xl md:text-5xl sm:text-4xl xs:text-3xl text-center w-full mb-14 md:mb-10 text-dark dark:text-light">
+        Skills
+      </h2>
+      <motion.ul
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          visible: { transition: { staggerChildren: 0.05 } },
+        }}
+        className="grid gap-6 sm:gap-5 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 justify-items-center"
+      >
+        {skills.map(({ name, Icon }, i) => (
+          <motion.li
+            key={name}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            whileHover={{ y: -6, scale: 1.04 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="relative rounded-xl p-3 bg-white/60 dark:bg-dark/60 backdrop-blur shadow-sm ring-1 ring-black/10 dark:ring-light/10 w-20 h-20 sm:w-16 sm:h-16 flex items-center justify-center">
+              <Icon className="w-12 h-12 sm:w-10 sm:h-10" />
+              <span className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition" />
+            </div>
+            <p className="text-xs font-medium text-dark/70 dark:text-light/70 text-center line-clamp-2">
+              {name}
+            </p>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </section>
   );
 };
 

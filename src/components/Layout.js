@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const Layout = ({children, className}) => {
+/**
+ * Layout
+ * Provides consistent horizontal rhythm, max-width container, and adaptive padding.
+ * Props:
+ *  - className: additional utility classes
+ *  - noPad: removes default padding (for full-bleed sections)
+ */
+const Layout = ({ children, className = "", noPad = false }) => {
   return (
-    <div className={`w-full h-full inline-block z-0 bg-light p-32 xl:p-24 lg:p-16 md:p-12 sm:p-8 ${className}`}>
-        {children}
+    <div
+      className={`relative w-full ${
+        noPad ? "" : "px-8 py-16 md:py-14 md:px-6 sm:px-5 sm:py-12"
+      } `}
+    >
+      <div className={`mx-auto max-w-7xl ${className}`}>{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
