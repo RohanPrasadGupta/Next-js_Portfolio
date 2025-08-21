@@ -35,16 +35,15 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
   return (
     <button
       href={href}
-      className={`${className} relative group text-light my-2`}
+      className={`${className} relative group my-2 text-dark dark:text-light font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded`}
       onClick={handleClick}
     >
       {title}
-
       <span
-        className={`h-[1px] inline-block w-0 bg-light absolute left-0 -bottom-0.5
-            group-hover:w-full transition-[width] ease duration-300
-            ${router.asPath === href ? "w-full" : "w-0"}
-            `}
+        className={`h-[1px] inline-block w-0 bg-dark dark:bg-light absolute left-0 -bottom-0.5
+                group-hover:w-full transition-[width] ease duration-300
+                ${router.asPath === href ? "w-full" : "w-0"}
+                `}
       >
         &nbsp;
       </span>
@@ -60,7 +59,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full px-32 py-5 font-medium flex item-center justify-between relative z-20 lg:px-16 md:px-12 sm:px-8 bg-light/80 dark:bg-dark/80 backdrop-blur-md border-b border-black/5 dark:border-light/10 supports-[backdrop-filter]:bg-light/60 dark:supports-[backdrop-filter]:bg-dark/60">
+    <header className="w-full px-32 py-5 font-medium flex item-center justify-between relative z-20 lg:px-16 md:px-12 sm:px-6 xs:px-4 bg-light/80 dark:bg-dark/80 backdrop-blur-md border-b border-black/5 dark:border-light/10 supports-[backdrop-filter]:bg-light/60 dark:supports-[backdrop-filter]:bg-dark/60">
       <button
         className="flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
@@ -125,9 +124,9 @@ const NavBar = () => {
         <motion.div
           initial={{ scale: 0.95, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[72vw] flex z-30 flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-light/10 bg-light/90 dark:bg-dark/90 backdrop-blur-xl py-28 px-10 shadow-lg"
+          className="min-w-[70vw] max-w-sm flex z-30 flex-col items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-black/10 dark:border-light/10 bg-white/90 dark:bg-dark/90 backdrop-blur-xl py-14 px-10 sm:px-8 shadow-xl gap-10"
         >
-          <nav className="flex items-center justify-center flex-col ">
+          <nav className="flex items-center justify-center flex-col gap-2">
             <CustomMobileLink
               href="/"
               title="Home"
@@ -160,19 +159,19 @@ const NavBar = () => {
             />
             <CustomMobileLink
               href="/ContactMe"
-              title="Contatc Me"
+              title="Contact Me"
               className=""
               toggle={handleClick}
             />
           </nav>
 
-          <nav className="flex item-center justify-center flex-wrap mt-4 text-light dark:text-light">
+          <nav className="flex item-center justify-center flex-wrap text-dark dark:text-light gap-5">
             <motion.a
               href="https://github.com"
               target={"blank"}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 sm:mx-1"
+              className="w-6"
             >
               <GithubIcon />
             </motion.a>
@@ -181,7 +180,7 @@ const NavBar = () => {
               target={"blank"}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 sm:mx-1"
+              className="w-6"
             >
               <LinkedInIcon />
             </motion.a>
