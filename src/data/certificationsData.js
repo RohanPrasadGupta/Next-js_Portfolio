@@ -1,11 +1,14 @@
-// Central certifications data
+// Central certifications data (static imports for cross-device reliability)
+import googleDA from "../../public/images/projects/GoogleDA.png";
+import taiwanAI from "../../public/images/projects/TaiwanAI.jpg";
+
 export const certifications = [
   {
     slug: "google-data-analytics",
     title: "Google Data Analytics Professional Certificate",
     provider: "Google / Coursera",
     date: "Dec 2022",
-    image: require("../../public/images/projects/GoogleDA.png"),
+    image: googleDA,
     link: "https://www.coursera.org/professional-certificates/google-data-analytics",
     featured: true,
   },
@@ -14,7 +17,7 @@ export const certifications = [
     title: "Application of AI, Machine Vision & Robotics",
     provider: "Taiwan AI (Industry Program)",
     date: "Aug 2021",
-    image: require("../../public/images/projects/TaiwanAI.jpg"),
+    image: taiwanAI,
     link: "/",
     featured: true,
   },
