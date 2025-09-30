@@ -243,11 +243,14 @@ const About = () => {
                 <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-white/20 backdrop-blur-sm shadow-lg" />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Image
-                  src={profilepic}
+                  src="/images/profile/developer-pic-2.png"
                   alt="ROHAN"
                   className="w-full h-auto rounded-2xl relative z-10"
                   priority
                   sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw , 33vw"
+                  width={600}
+                  maxWidth={600}
+                  height={800}
                 />
               </motion.div>
 
