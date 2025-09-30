@@ -5,10 +5,10 @@ import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 
-const contactus = () => {
-  const[NameText, setNameText] = useState();
-  const[EmailText, setEmailText] = useState();
-  const[MsgText, setMsgText] = useState();
+const Contactus = () => {
+  const [nameText, setNameText] = useState();
+  const [emailText, setEmailText] = useState();
+  const [msgText, setMsgText] = useState();
   const [bannerVisible, setBannerVisible] = useState(false);
   const [bannerMessage, setBannerMessage] = useState("");
   const form = useRef();
@@ -16,7 +16,7 @@ const contactus = () => {
   const showBanner = (message) => {
     setBannerMessage(message);
     setBannerVisible(true);
-  
+
     // Hide the banner after 3 seconds
     setTimeout(() => {
       setBannerVisible(false);
@@ -24,10 +24,9 @@ const contactus = () => {
     }, 3000);
   };
 
-
   const sendEmail = (e) => {
     e.preventDefault();
-  
+
     emailjs
       .sendForm(
         "service_709irtu",
@@ -38,9 +37,9 @@ const contactus = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setNameText('');
-          setEmailText('');
-          setMsgText('');
+          setNameText("");
+          setEmailText("");
+          setMsgText("");
           showBanner("Email sent successfully!"); // Show success banner
         },
         (error) => {
@@ -48,7 +47,7 @@ const contactus = () => {
           showBanner("Email sending failed."); // Show error banner
         }
       );
-  }
+  };
 
   return (
     <>
@@ -58,48 +57,78 @@ const contactus = () => {
       </Head>
       <Transitions />
       <main>
-      {bannerVisible && <Banner message={bannerMessage} />}
+        {bannerVisible && <Banner message={bannerMessage} />}
 
         <div className=" h-screen  flex m-auto justify-between grid-cols-2 gap-6 mt-28 mb-0 p-2 md:flex-col md:justify-center md:ml-auto md:mt-0 md:mb-2">
-
-        <div className=" text-white font-mono mt-12 p-2 w-[50%] ml-[20%] md:justify-center">
-        <p className="text-5xl underline underline-offset-2 md:text-2xl">Let's chat:</p>
-        <p className="text-2xl mt-1 md:text-xl text-justify">Tell me about your project..</p>
-        <p className="text-xl mt-2 md:text-sm md:text-start">let's create something together &#9996; </p>
-        <p className=" text-sm mt-2 text-black/80 md:text-sm font-bold">Mail me at:<span>
-        <Link
+          <div className=" text-white font-mono mt-12 p-2 w-[50%] ml-[20%] md:justify-center">
+            <p className="text-5xl underline underline-offset-2 md:text-2xl">
+              Let's chat:
+            </p>
+            <p className="text-2xl mt-1 md:text-xl text-justify">
+              Tell me about your project..
+            </p>
+            <p className="text-xl mt-2 md:text-sm md:text-start">
+              let's create something together &#9996;{" "}
+            </p>
+            <p className=" text-sm mt-2 text-black/80 md:text-sm font-bold">
+              Mail me at:
+              <span>
+                <Link
                   href="mailto:rohanprasadgupta4@gmail.com"
                   target={"_blank"}
                   className="ml-4 text-light/80 text-sm my-2 text-red-400 underline md:text-sm font-bold"
                 >
                   rohanprasadgupta4@gmail.com
-                </Link> </span></p>
-        </div>
+                </Link>{" "}
+              </span>
+            </p>
+          </div>
 
           <div className=" text-white mr-[20%] w-[50%] font-serif md:justify-center md:m-auto">
             <form ref={form} onSubmit={sendEmail} className="flex flex-col">
-              
-              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Name:</label>
-              <input type="text" name="from_name" placeholder="Your Name" className="p-1 text-black mt-2 border-2 rounded-lg" value={NameText} />
-              
-              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Email:</label>
-              <input type="email" name="Sender_Email" placeholder="Your Email" className="p-1 text-black border-2 rounded-lg mt-2" value={EmailText} />
+              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">
+                Name:
+              </label>
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your Name"
+                className="p-1 text-black mt-2 border-2 rounded-lg"
+                value={nameText}
+              />
 
-              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">Message:</label>
-              <textarea name="message" placeholder="Comments..." className="p-1 border-2 text-black rounded-lg mt-2" value={MsgText}/>
+              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">
+                Email:
+              </label>
+              <input
+                type="email"
+                name="Sender_Email"
+                placeholder="Your Email"
+                className="p-1 text-black border-2 rounded-lg mt-2"
+                value={emailText}
+              />
 
-              <input type="submit" value="Send" className="mt-6 hover:cursor-pointer p-2 border-2 border-white text-3xl w-1/2 rounded-lg hover:bg-black/80 md:text-2xl xl:text-5xl lg:text-xl sm:text-2xl md:ml-[20%]" />
+              <label className="text-5xl mt-2 md:text-3xl xl:text-5xl sm:text-3xl">
+                Message:
+              </label>
+              <textarea
+                name="message"
+                placeholder="Comments..."
+                className="p-1 border-2 text-black rounded-lg mt-2"
+                value={msgText}
+              />
+
+              <input
+                type="submit"
+                value="Send"
+                className="mt-6 hover:cursor-pointer p-2 border-2 border-white text-3xl w-1/2 rounded-lg hover:bg-black/80 md:text-2xl xl:text-5xl lg:text-xl sm:text-2xl md:ml-[20%]"
+              />
             </form>
-            
-
-           
           </div>
-          
         </div>
-
       </main>
     </>
   );
 };
 
-export default contactus;
+export default Contactus;

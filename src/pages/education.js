@@ -1,90 +1,122 @@
-import React, { useRef } from 'react'
-import { motion, useScroll } from 'framer-motion';
-import LiIcon from '../components/LiIcon';
-import Head from 'next/head';
-import Layout from '@/components/Layout';
-import AnimatedText from '@/components/AnimatedText';
-import Transitions from '@/components/Transitions';
+import React, { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
+import Head from "next/head";
+import Layout from "@/components/Layout";
+import AnimatedText from "@/components/AnimatedText";
+import Transitions from "@/components/Transitions";
 
+const educationData = [
+  {
+    title:
+      "Master's Degree in Artificial Intelligence and Internet of Things (AI and IoT)",
+    time: "2022 - 2024",
+    organization:
+      "Sirindhorn International Institute of Technology (SIIT), Thammasat University",
+    place: "Pathum Thani, Thailand",
+    score:
+      "Awarded fully funded TISR scholarship in partnership with SIIT, TU, NSDTA, and Tokyo Tech.",
+  },
+  {
+    title: "Bachelor of Technology in Computer Science Engineering",
+    time: "2016 - 2020",
+    organization: "Guru Nanak Institute of Technical Campus (GNITC), JNTUH",
+    place: "Hyderabad, India",
+  },
 
-const Details = ({title, place,time,organization,score})=>{
-    const ref = useRef(null);
-    return(
-        <li className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col item-start justify-between'>
-            <LiIcon reference={ref}/>
-            <motion.div
-            initial={{y:50}}
-            whileInView={{y:0}}
-            transition={{duration:1 , type:'keyframes'}}>
+  {
+    title: "Higher Secondary School",
+    time: "[2014 - 2016]",
+    organization: "Liverpool International Higher Secondary School",
+    place: "Kathmandu, NEPAL",
+  },
 
-                <h3 className='capitalize font-bold text-2xl sm:text:xl md:text-xl xs:text-lg text-light/90 '>{title}</h3>
-                <span className='capitalize text-yellow font-bold text-sm sm:text-xs xs:text-xs md:text-xs'>{time} | {organization}</span>
-                <p className='text-sm w-full text-white '>{place}</p>
-                <span className='text-xs w-full font-bold text-white'>{score}</span>
-            </motion.div>
-        </li>
-    )
-}
+  {
+    title: "Secondary School",
+    time: "[2013 - 2014]",
+    organization: "New English Boarding School",
+    place: "Janakpur, NEPAL",
+  },
+];
+
+const Details = ({ title, place, time, organization, score }) => {
+  return (
+    <li className="my-8 first:mt-0 last:mb-0 w-[70%] mx-auto flex flex-col items-start justify-between">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:bg-white/25 transition-all duration-300 group relative overflow-hidden w-full"
+      >
+        {/* Glassmorphism background effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-blue-500/5 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/5 via-transparent to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        {/* Content wrapper */}
+        <div className="relative z-10">
+          <h3 className="capitalize font-bold text-2xl sm:text-xl md:text-xl xs:text-lg text-gray-900 drop-shadow-sm mb-3">
+            {title}
+          </h3>
+          <span className="capitalize font-bold text-sm sm:text-xs xs:text-xs md:text-xs text-blue-900 bg-white/40 backdrop-blur-sm px-3 py-1 rounded-full border border-white/50 shadow-sm inline-block mb-3">
+            {time} | {organization}
+          </span>
+          <p className="text-sm w-full text-blue-800 mb-2 font-medium">
+            {place}
+          </p>
+          {score && (
+            <span className="text-xs w-full font-bold text-gray-900 bg-white/30 backdrop-blur-sm px-2 py-1 rounded-full border border-white/40 inline-block shadow-sm">
+              {score}
+            </span>
+          )}
+        </div>
+
+        {/* Enhanced glassmorphism border effect */}
+        <div className="absolute inset-[1px] rounded-2xl bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      </motion.div>
+    </li>
+  );
+};
 
 const Education = () => {
-
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['start end', 'center start']
-      });
-
   return (
     <>
-    <Head>
-            <title>ROHAN PRASAD GUPTA | Education page</title>
-            <meta name="description" content="Generated by create next app" />
-    </Head>
-    <Transitions />
-    <main>
-    <Layout className='bg-gradient-to-tr from-green-400 to-blue-400'>
-    <div className='my-[-50px]  items-center '>
-    <AnimatedText text="Education" className='font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl md:my-12 xs:text-5xl text-light' />
-        
-        <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
-        <motion.div 
-            style={{scaleY:scrollYProgress}}
-            className='bg-dark origin-top w-[4px] h-full left-9 absolute top-1' />
-        
-                <ul>
-                    <Details
-                    title = "Master's Degree in artificial intelligence and IoT" 
-                    time = "[2022 - Current]"
-                    organization = "Sirindhorn International Institute of Technology (SIIT) [Thammasat University]"
-                    place = "Khlong Luang, Pathum Thani 12120, THAILAND"
-                    score = "GPA:&nbsp;3.76" /> 
+      <Head>
+        <title>ROHAN PRASAD GUPTA | Education page</title>
+        <meta name="description" content="Generated by create next app" />
+      </Head>
+      <Transitions />
+      <main>
+        <Layout className="bg-gradient-to-tr from-green-400 to-blue-400 p-16 pt-10">
+          <div className="my-[-50px] items-center mt-12">
+            <AnimatedText
+              text="Education"
+              className="font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl md:my-12 xs:text-5xl text-gray-900 drop-shadow-lg"
+            />
 
-                    <Details title="Bachelor of Technology in Computer Science Engineering" 
-                    time = "[2016 - 2020]"
-                    organization="Guru Nanak Institute of Technical Campus (GNITC) [JNTUH]"
-                    place = "Ibrahimpatnam, Hyderabad, INDIA"
-                    score= "GPA:&nbsp;7.77" />
-                    
-                    <Details title = "Higher Secondary School" 
-                    time = "[2014 - 2016]" 
-                    organization="Liverpool International Higher Secondary School"
-                    place = "Kathmandu, NEPAL"
-                     />
+            <div className="w-[75%] mx-auto lg:w-[90%] md:w-full">
+              <ul className="space-y-6">
+                {educationData.map((education, index) => (
+                  <Details
+                    key={index}
+                    title={education.title}
+                    time={education.time}
+                    organization={education.organization}
+                    place={education.place}
+                    score={education.score}
+                  />
+                ))}
+              </ul>
+            </div>
 
-                    <Details title = "Secondary School" 
-                    time = "[2013 - 2014]"
-                    organization="New English Boarding School"
-                    place="Janakpur, NEPAL" 
-                    />
-                </ul>
-            
-        </div>
-        <AnimatedText text='A good education gives you the knowledge, and skills give you the confidence to succeed....' className='mt-40 text-light/90 md:m-6 xs:mt-20 sm:mt-20'/>
-    </div>
-    </Layout>
-    </main>
+            <AnimatedText
+              text="A good education gives you the knowledge, and skills give you the confidence to succeed...."
+              className="mt-40 text-light/90 md:m-6 xs:mt-20 sm:mt-20"
+            />
+          </div>
+        </Layout>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;
