@@ -21,7 +21,7 @@ export default function Home() {
           <div className="flex item-center justify-between w-full lg:flex-col mt-6">
             <div className="w-1/2 md:w-full">
               <Image
-                src="/images/profile/developer-pic-1.png"
+                src={profilepic}
                 width={400}
                 height={500}
                 alt="ROHAN"
