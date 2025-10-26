@@ -7,6 +7,7 @@ import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
 import Transitions from "@/components/Transitions";
 import EmailIcon from "@mui/icons-material/Email";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
@@ -49,23 +50,39 @@ export default function Home() {
               </p>
 
               <div className="flex content-between m-[25%]  self-start mt-2 lg:self-center ">
-                <Link
-                  href="/ROHAN_PRASAD_GUPTA.pdf"
-                  target={"_blank"}
-                  className="flex item-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark md:p-2 md:px-4 md:text-base"
-                  download={true}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    whiteSpace: "nowrap",
+                  }}
                 >
-                  Resume <LinkArrow className={`w-6 ml-1`} />
-                </Link>
+                  <Link
+                    href="/ROHAN_PRASAD_GUPTA.pdf"
+                    target={"_blank"}
+                    className="flex item-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark md:p-2 md:px-4 md:text-base"
+                    download={true}
+                  >
+                    Resume <LinkArrow className={`w-6 ml-1`} />
+                  </Link>
+                </Box>
 
-                <Link
-                  href="mailto:rohanprasadgupta4@gmail.com"
-                  target={"_blank"}
-                  className="ml-4 flex items-center bg-light/10 text-light border-2 border-light/50 p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark transition-colors duration-300 md:p-2 md:px-4 md:text-base"
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    whiteSpace: "nowrap",
+                  }}
                 >
-                  <EmailIcon className="w-5 h-5 mr-2" />
-                  Contact Me
-                </Link>
+                  <Link
+                    href="mailto:rohanprasadgupta4@gmail.com"
+                    target={"_blank"}
+                    className="ml-4 flex items-center bg-light/10 text-light border-2 border-light/50 p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark transition-colors duration-300 md:p-2 md:px-4 md:text-base"
+                  >
+                    <EmailIcon className="w-5 h-5 mr-2 " />
+                    Contact Me
+                  </Link>
+                </Box>
               </div>
             </div>
           </div>

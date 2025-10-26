@@ -282,7 +282,7 @@ const About = () => {
                       className="flex items-center justify-between bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <div className="flex items-center space-x-4">
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full text-xl font-bold shadow-lg">
+                        <span className="bg-gradient-to-r w-16 items-center flex justify-center from-blue-600 to-purple-600 text-white p-3 rounded-full text-xl font-bold shadow-lg">
                           10+
                         </span>
                         <div>
@@ -306,7 +306,7 @@ const About = () => {
                       className="flex items-center justify-between bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <div className="flex items-center space-x-4">
-                        <span className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-3 rounded-full text-xl font-bold shadow-lg">
+                        <span className="bg-gradient-to-r w-16 items-center flex justify-center from-green-600 to-teal-600 text-white p-3 rounded-full text-xl font-bold shadow-lg">
                           25+
                         </span>
                         <div>
@@ -330,7 +330,7 @@ const About = () => {
                       className="flex items-center justify-between bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <div className="flex items-center space-x-4">
-                        <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full text-xl font-bold shadow-lg">
+                        <span className="bg-gradient-to-r w-16 items-center flex justify-center from-orange-500 to-red-500 text-white p-3 rounded-full text-xl font-bold shadow-lg">
                           🚀
                         </span>
                         <div>
