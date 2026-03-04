@@ -10,46 +10,62 @@ import Transitions from "@/components/Transitions";
 import { motion } from "framer-motion";
 
 const skillsData = [
+  // Programming Languages
   "Python",
   "JavaScript (ES6+)",
+  "GO",
   "TypeScript",
   "SQL",
   "C#",
   "C",
-  "Java",
+  "Basic Java",
+  // Frameworks & Libraries
   "React.js",
   "Next.js",
+  "Node.js",
+  "NestJS",
+  "Express.js",
   "Redux",
-  "HTML5",
-  "CSS3",
+  "Zustand",
+  "FastAPI",
   "Tailwind CSS",
   "Material UI",
   "Bootstrap",
   "Framer Motion",
-  "Node.js",
-  "Express.js",
-  "RESTful APIs",
   "GraphQL",
-  "JWT Authentication",
-  "Socket.IO",
+  "REST API",
+  // Databases
   "MongoDB",
+  "Redis",
+  "MySQL",
+  "PostgreSQL",
   "NoSQL",
   "Firebase",
   "Firebase Storage",
+  // Tools
   "Git",
+  "Docker",
+  "Postman",
   "CI/CD",
-  "Web Sockets",
-  "Real-Time Data",
   "Microsoft 365",
   "Power BI",
   "Tableau",
-  "Docker",
   "Adobe Photoshop",
   "Adobe XD",
   "Figma",
+  // Concepts
+  "RESTful APIs",
+  "JWT Authentication",
+  "WebSockets",
+  "Real-Time Data Processing",
+  "Microservices Architecture",
+  "Caching Strategies (Redis)",
+  "API Integration",
+  "Data Structures & Algorithms",
   "Data Analytics",
   "Data Visualization",
-  "Data Structures & Algorithms",
+  "Performance Optimization",
+  // AI / CV
   "OpenCV",
   "MediaPipe",
   "TensorFlow",
@@ -135,82 +151,140 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/5 via-transparent to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               {/* Content wrapper */}
-              <div className="relative z-10">
-                <h2 className="mb-6 text-xl font-bold uppercase text-gray-900 underline underline-offset-2 md:text-lg sm:text-base xs:text-sm drop-shadow-sm">
-                  About Me
-                </h2>
+              <div className="relative z-10 w-full">
 
-                <div className="mb-8">
-                  <p className="font-medium my-3 md:text-sm sm:text-sm xs:text-sm text-blue-900 text-justify leading-relaxed drop-shadow-sm">
-                    Full-stack Software Developer with expertise in{" "}
-                    <span className="text-gray-900 font-bold bg-white/40 backdrop-blur-sm px-2 py-1 rounded border border-white/50 shadow-sm">
-                      Next.js, React, TypeScript, Node.js, and MongoDB
-                    </span>
-                    , specializing in building{" "}
-                    <span className="text-gray-900 font-bold">
-                      scalable, responsive, real-time applications
-                    </span>
-                    . Experienced in developing solutions with RESTful and
-                    GraphQL APIs, modern frontend frameworks, and state
-                    management tools.
-                  </p>
+                {/* Section Header */}
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center gap-3 mb-7"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-emerald-500 shadow-lg flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight md:text-xl sm:text-lg drop-shadow-sm">
+                    About Me
+                  </h2>
+                </motion.div>
 
-                  <p className="font-medium my-3 md:text-sm sm:text-sm xs:text-sm text-blue-900 text-justify leading-relaxed drop-shadow-sm">
-                    Skilled in Agile methodologies and CI/CD practices, with a
-                    proven track record of delivering impactful, user-focused
-                    software solutions. Holds a Master's degree in{" "}
-                    <span className="text-gray-900 font-bold bg-white/40 backdrop-blur-sm px-2 py-1 rounded border border-white/50 shadow-sm">
-                      AI and IoT
+                {/* Bio Paragraphs */}
+                <div className="mb-7 space-y-4">
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-gray-800 text-[15px] md:text-sm sm:text-sm xs:text-xs leading-relaxed text-justify"
+                  >
+                    Software Developer with expertise in full-stack web application development, specializing in{" "}
+                    <span className="inline-flex flex-wrap gap-1 mx-1">
+                      {["Next.js", "React", "TypeScript", "GO", "Node.js", "MongoDB"].map((t) => (
+                        <span key={t} className="bg-blue-600/10 text-blue-800 font-semibold px-2 py-0.5 rounded-md border border-blue-300/40 text-sm">
+                          {t}
+                        </span>
+                      ))}
                     </span>
-                    , with a passion for integrating
-                    <span className="text-gray-900 font-bold">
-                      {" "}
-                      machine learning and data analytics
+                    . Experienced in building{" "}
+                    <span className="text-gray-900 font-semibold">scalable, responsive, real-time applications</span>{" "}
+                    using <span className="text-gray-900 font-semibold">RESTful</span> and{" "}
+                    <span className="text-gray-900 font-semibold">GraphQL APIs</span>.
+                  </motion.p>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-gray-800 text-[15px] md:text-sm sm:text-sm xs:text-xs leading-relaxed text-justify"
+                  >
+                    Skilled in{" "}
+                    <span className="bg-emerald-600/10 text-emerald-800 font-semibold px-2 py-0.5 rounded-md border border-emerald-300/40 text-sm">
+                      Agile Development
                     </span>{" "}
-                    to drive business value and enhance user experiences.
-                  </p>
+                    and{" "}
+                    <span className="bg-emerald-600/10 text-emerald-800 font-semibold px-2 py-0.5 rounded-md border border-emerald-300/40 text-sm">
+                      CI/CD Practices
+                    </span>
+                    , with a proven track record of delivering impactful, client-focused software solutions on time and at scale.
+                  </motion.p>
 
-                  <p className="font-medium my-3 md:text-sm sm:text-sm xs:text-sm text-blue-900 text-justify leading-relaxed drop-shadow-sm">
-                    Currently working at{" "}
-                    <span className="text-gray-900 font-bold bg-white/40 backdrop-blur-sm px-2 py-1 rounded border border-white/50 shadow-sm">
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-gray-800 text-[15px] md:text-sm sm:text-sm xs:text-xs leading-relaxed text-justify"
+                  >
+                    Holds a Master&apos;s degree in{" "}
+                    <span className="bg-purple-600/10 text-purple-800 font-semibold px-2 py-0.5 rounded-md border border-purple-300/40 text-sm">
+                      AI &amp; IoT
+                    </span>{" "}
+                    with a passion for integrating{" "}
+                    <span className="text-gray-900 font-semibold">machine learning and data analytics</span>{" "}
+                    into impactful software solutions. Currently working at{" "}
+                    <a
+                      href="https://www.cynclair.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-orange-500/10 text-orange-800 font-semibold px-2 py-0.5 rounded-md border border-orange-300/40 text-sm hover:bg-orange-500/20 transition-colors duration-200"
+                    >
                       RV Connex Co. Ltd. [Cynclair]
-                    </span>{" "}
-                    as a Software Developer, building innovative solutions and
-                    contributing to cutting-edge projects that make a real
-                    impact.
-                  </p>
+                    </a>{" "}
+                    as a Software Developer, contributing to cutting-edge projects that make a real impact.
+                  </motion.p>
                 </div>
 
-                {/* Skills Section Integrated */}
+                {/* Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent mb-7" />
+
+                {/* Skills Section */}
                 <div className="w-full">
-                  <h3 className="text-lg font-bold text-gray-900 mb-6 text-center border-b border-white/40 pb-2 drop-shadow-sm">
-                    Technical Skills
-                  </h3>
+                  <motion.div
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                    className="flex items-center gap-2 mb-4"
+                  >
+                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 shadow-md flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-base font-bold text-gray-900 drop-shadow-sm">
+                      Technical Skills
+                    </h3>
+                  </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-white/15 backdrop-blur-lg rounded-xl p-6 border border-white/30 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                    className="bg-white/20 backdrop-blur-lg rounded-xl p-5 border border-white/30 hover:bg-white/25 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    <div className="flex flex-wrap justify-center gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {skillsData.map((skill, skillIndex) => (
                         <motion.span
                           key={skill}
-                          initial={{ opacity: 0, scale: 0.8 }}
+                          initial={{ opacity: 0, scale: 0.85 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{
                             duration: 0.2,
-                            delay: skillIndex * 0.02,
+                            delay: skillIndex * 0.015,
                             type: "spring",
-                            stiffness: 100,
+                            stiffness: 120,
                           }}
                           whileHover={{
-                            scale: 1.05,
-                            boxShadow: "0 4px 15px rgba(59, 130, 246, 0.2)",
+                            scale: 1.08,
+                            boxShadow: "0 4px 15px rgba(59, 130, 246, 0.25)",
                           }}
-                          className="inline-block bg-white/30 backdrop-blur-sm text-blue-900 px-3 py-2 rounded-full text-sm font-medium border border-white/40 hover:bg-white/40 hover:border-blue-300/50 transition-all duration-300 cursor-default shadow-sm hover:shadow-md"
+                          className="inline-block bg-white/40 backdrop-blur-sm text-blue-900 px-3 py-1.5 rounded-lg text-xs font-semibold border border-white/50 hover:bg-white/60 hover:border-blue-300/60 hover:text-blue-800 transition-all duration-200 cursor-default shadow-sm"
                         >
                           {skill}
                         </motion.span>

@@ -6,16 +6,22 @@ import LiIcon from "./LiIcon";
 const experienceData = [
   {
     position: "Software Developer",
-    company: "RV Connex Co., Ltd. [Cynclair]",
-    time: "JUN 2024 - PRESENT",
+    company: "RV Connex Co. Ltd. [Cynclair]",
+    time: "JUN 2024 - Present",
     companyLink: "https://www.cynclair.com/",
     address: "Thailand",
+    summary:
+      "Full-stack Software Developer contributing to AZURITES OpenXDR, improving data performance by 45%, modernizing UI with Tailwind, and delivering new features in an Agile workflow using Next.js, GraphQL, and TypeScript.",
     description: [
-      "Developed scalable responsive web applications using Next.js, React, and TypeScript.",
-      "Integrated GraphQL APIs for efficient data fetching, caching, and state management using React Query.",
-      "Improved frontend performance and responsiveness across devices following responsive design principles.",
-      "Applied modern JavaScript/TypeScript development best practices and UI/UX improvements.",
-      "Collaborated in Agile teams, delivering features with high quality and on schedule.",
+      "Full-stack developer for AZURITES OpenXDR, a cybersecurity threat detection and incident response platform used by enterprise clients.",
+      "Built and maintained frontend and backend features using Next.js, React, TypeScript, Node.js, and GraphQL.",
+      "Developed and integrated scalable APIs, ensuring 99.9% uptime while supporting new data models and analytics pipelines.",
+      "Improved GraphQL querying and caching strategies using Apollo Client and React Query, reducing data load times by up to 45%.",
+      "Enhanced UI responsiveness and layout scalability, ensuring seamless usage across desktop, tablet, and mobile devices — improving usability scores by 30%+.",
+      "Converted legacy SCSS components to Tailwind CSS, reducing UI-layer code complexity by ~40%.",
+      "Designed and optimized dashboards, charts, maps, and alert views for real-time security data with zero visual overflow or layout breaking.",
+      "Coordinated with cross-functional teams (backend, product, QA) to deliver new features and customer requirements every sprint under Agile methodology.",
+      "Contributed to code reviews, improved CI flows, and maintained clean Git workflows — helping reduce regression issues by ~25%.",
     ],
   },
   {
@@ -38,6 +44,8 @@ const experienceData = [
     time: "JAN 2022 - JUL 2022",
     companyLink: "https://www.mos.com.np/",
     address: "Kathmandu, Nepal",
+    summary:
+      "Implemented CI/CD pipelines to automate testing and deployment, enhanced data security and recovery processes, and collaborated in Agile teams to deliver reliable, client-focused software solutions.",
     description: [
       "Implemented CI/CD pipelines automating software integration, testing, and deployment, reducing release cycle time by 20%.",
       "Managed secure data storage, backup, and recovery aligned with Agile methodology.",
@@ -79,6 +87,7 @@ const Details = ({
   time,
   companyLink,
   address,
+  summary,
   description,
 }) => {
   const ref = useRef(null);
@@ -154,6 +163,19 @@ const Details = ({
               </span>
             </motion.div>
           </div>
+
+          {/* Summary Section */}
+          {summary && (
+            <motion.p
+              initial={{ y: 10, opacity: 0 }}
+              viewport={{ once: true }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="text-gray-800 text-base md:text-sm sm:text-sm xs:text-xs leading-relaxed mb-5 italic border-l-4 border-blue-500/60 pl-4 bg-white/20 rounded-r-lg py-2 drop-shadow-sm"
+            >
+              {summary}
+            </motion.p>
+          )}
 
           {/* Description Section */}
           <motion.div
@@ -252,6 +274,7 @@ const Experience = () => {
               time={experience.time}
               companyLink={experience.companyLink}
               address={experience.address}
+              summary={experience.summary}
               description={experience.description}
             />
           ))}
