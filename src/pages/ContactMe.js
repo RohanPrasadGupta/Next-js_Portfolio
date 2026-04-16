@@ -11,6 +11,10 @@ const ContactMe = () => {
   const [bannerVisible, setBannerVisible] = useState(false);
   const [bannerMessage, setBannerMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const isFormReady =
+    Boolean(nameText.trim()) &&
+    Boolean(emailText.trim()) &&
+    Boolean(msgText.trim());
 
   const showBanner = (message) => {
     setBannerMessage(message);
@@ -136,7 +140,7 @@ const ContactMe = () => {
               <input
                 type="submit"
                 value={isSending ? "Sending..." : "Send"}
-                disabled={isSending}
+                disabled={isSending || !isFormReady}
                 className="mt-6 hover:cursor-pointer p-2 border-2 border-white text-3xl w-1/2 rounded-lg hover:bg-black/80 md:text-2xl xl:text-5xl lg:text-xl sm:text-2xl md:ml-[20%] disabled:cursor-not-allowed disabled:opacity-70"
               />
             </form>
