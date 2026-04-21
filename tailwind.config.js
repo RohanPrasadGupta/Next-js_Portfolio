@@ -32,7 +32,6 @@ module.exports = {
       xs : {max : '479px'}
 
   },
+  },
   plugins: [],
-}
-
 }
