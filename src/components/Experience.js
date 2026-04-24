@@ -11,10 +11,13 @@ const experienceData = [
     companyLink: "https://www.cynclair.com/",
     address: "Thailand",
     summary:
-      "Full-stack Software Developer contributing to AZURITES OpenXDR, improving data performance by 45%, modernizing UI with Tailwind, and delivering new features in an Agile workflow using Next.js, GraphQL, and TypeScript.",
+      "Full-stack Software Developer contributing to AZURITES OpenXDR, improving data performance by 45%, delivering AI-assisted SOC workflows, and shipping production-grade features in an Agile setup using Next.js, GraphQL, and TypeScript.",
     description: [
       "Full-stack developer for AZURITES OpenXDR, a cybersecurity threat detection and incident response platform used by enterprise clients.",
+      "Built an AI-powered SOC investigation service using Python, FastAPI, and AWS Bedrock to transform raw alerts into structured findings, risk verdicts, and remediation guidance.",
       "Built and maintained frontend and backend features using Next.js, React, TypeScript, Node.js, and GraphQL.",
+      "Implemented LLM-driven analysis workflows with prompt engineering, response structuring, and reliability controls to generate explainable incident reports.",
+      "Developed context-aware threat correlation using real-time incidents plus historical security data via GraphQL and Neo4j, improving triage quality and chatbot-assisted investigations.",
       "Developed and integrated scalable APIs, ensuring 99.9% uptime while supporting new data models and analytics pipelines.",
       "Improved GraphQL querying and caching strategies using Apollo Client and React Query, reducing data load times by up to 45%.",
       "Enhanced UI responsiveness and layout scalability, ensuring seamless usage across desktop, tablet, and mobile devices — improving usability scores by 30%+.",
@@ -79,6 +82,14 @@ const experienceData = [
       "Consistently delivered high-quality work in collaborative team environment.",
     ],
   },
+];
+
+const impactMetrics = [
+  { value: "45%", label: "faster data performance" },
+  { value: "30%+", label: "usability improvement" },
+  { value: "~40%", label: "UI code complexity reduced" },
+  { value: "99.9%", label: "platform uptime supported" },
+  { value: "20%", label: "release cycle reduction" },
 ];
 
 const Details = ({
@@ -239,6 +250,31 @@ const Experience = () => {
       >
         Experience
       </motion.h2>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="w-[85%] mx-auto mb-12 lg:w-[90%] md:w-[95%] sm:w-full"
+      >
+        <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-2xl p-6 md:p-5">
+          <h3 className="text-2xl font-bold text-gray-900 mb-5 md:text-xl sm:text-lg">
+            Impact
+          </h3>
+          <div className="grid grid-cols-5 gap-4 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1">
+            {impactMetrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-xl bg-white/30 border border-white/40 px-4 py-3 text-center"
+              >
+                <p className="text-2xl font-extrabold text-blue-800">{metric.value}</p>
+                <p className="text-sm text-gray-800">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
 
       <div
         ref={ref}

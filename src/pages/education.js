@@ -90,7 +90,7 @@ const Education = () => {
           <div className="my-[-50px] items-center mt-12">
             <AnimatedText
               text="Education"
-              className="font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl md:my-12 xs:text-5xl text-gray-900 drop-shadow-lg"
+              className="font-bold text-8xl text-center w-full mb-20 sm:text-6xl md:text-6xl md:my-12 xs:text-5xl text-light drop-shadow-lg"
             />
 
             <div className="w-[75%] mx-auto lg:w-[90%] md:w-full">

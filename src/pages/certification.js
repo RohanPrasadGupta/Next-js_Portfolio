@@ -10,6 +10,7 @@ import PythonForDS from "../../public/images/projects/PythonForDS.jpg";
 import udemyPY from "../../public/images/projects/udemyPY.jpg";
 import UiUx from "../../public/images/projects/UiUx.jpg";
 import AwsCert from "../../public/images/projects/AwsCert.png";
+import ClaudeCert from "../../public/images/projects/AnthropicAPI.png";
 import UAWAUdemy from "../../public/images/projects/UAWAUdemy.jpg";
 import Image from "next/image";
 import {
@@ -31,6 +32,12 @@ const sliderCertificates = [
     date: "Nov 2025",
     img: AwsCert,
     issuer: "Amazon Web Services",
+  },
+  {
+    title: "Claude with the Anthropic API - Anthropic",
+    date: "April 2026",
+    img: ClaudeCert,
+    issuer: "Anthropic",
   },
   {
     title: "Ultimate AWS Certified Developer Associate 2025 DVA-C02",

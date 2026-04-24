@@ -85,7 +85,7 @@ const Projects = () => {
               img="/images/projects/resmgr.jpeg"
               title="Real-Time Restaurant Management System"
               date="[ Freelance Project - 2024 ]"
-              summary="Designed and developed a full-stack real-time restaurant management platform using Next.js, React, Node.js, Express, and MongoDB. Implemented real-time order processing with Socket.IO, dynamic menu management with CRUD operations, and secure authentication with JWT tokens. Built interactive analytics dashboard with React Query, Material UI, and Chart.js/High charts for revenue insights."
+              summary="Designed and delivered a role-aware real-time restaurant platform with Next.js, React, Node.js, Express, and MongoDB. Implemented Socket.IO order notifications, dynamic menu CRUD with availability controls, and secure RBAC using JWT plus HTTP-only cookies for admins, staff, and customers. Built analytics dashboards with React Query caching, Material UI, and Chart.js/Highcharts to improve revenue visibility, order tracking, and operational decision-making."
               link="https://mgr-frontend.netlify.app/pages/home"
               linkGH="https://github.com/RohanPrasadGupta/resturant_mgr_frontend"
             />
@@ -94,7 +94,7 @@ const Projects = () => {
               img="/images/projects/e-commerce.jpeg"
               title="E-Commerce Platform: Full-Stack Web Application [ THE CART ]"
               date="[ 2024 ]"
-              summary="Developed a full-stack e-commerce platform using Next.js, Redux, and MongoDB with dynamic product search, advanced filtering, and JWT-based authentication. Integrated RESTful APIs with TanStack Query for efficient data fetching and state management. Designed responsive UI with Material UI & Tailwind CSS, added Framer Motion animations, and deployed on Netlify and Render."
+              summary="Built a full-stack e-commerce architecture using Next.js, Redux, MongoDB, and REST APIs with JWT-based authentication and real-time cart synchronization. Implemented advanced product search and filtering while using TanStack Query for caching strategies that improved data fetching efficiency across key user flows. Delivered a responsive UI with Material UI, Tailwind CSS, and Framer Motion, then deployed frontend/backend on Netlify and Render."
               link="https://rpg-ecommerce.netlify.app/pages/dashboard"
               linkGH="https://github.com/RohanPrasadGupta/ecommerce-proj"
             />
