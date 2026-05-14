@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pinGradient" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34D399" />
+      <stop offset="1" stop-color="#3B82F6" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path
+      d="M32 58C32 58 12 41.6 12 26C12 14.95 20.95 6 32 6C43.05 6 52 14.95 52 26C52 41.6 32 58 32 58Z"
+      fill="url(#pinGradient)"
+    />
+    <circle cx="32" cy="26" r="9" fill="white" fill-opacity="0.9" />
+  </g>
+</svg>
