@@ -1,3 +1,4 @@
+import ChatBot from "@/components/Chatbot";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import "@/styles/globals.css";
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
       <main className={`${montserrat.variable} font-mont bg-gradient-to-tr from-green-400 to-blue-400 w-full min-h-screen`}>
         <NavBar />
         <Component {...pageProps} />
+        <ChatBot />
         <Footer />
       </main>
     </>
