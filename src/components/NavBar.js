@@ -76,10 +76,14 @@ const NavBar = () => {
     const handleClick = () => setIsOpen(!isOpen);
 
     return (
-        <header className="w-full px-10 py-4 flex items-center justify-between relative z-10
-            bg-gradient-to-r from-blue-500/80 via-teal-500/70 to-green-500/80
-            backdrop-blur-xl border-b border-white/20 shadow-lg
-            lg:px-8 md:px-6 sm:px-4">
+        <>
+        <header className={`w-full px-10 py-4 flex items-center justify-between relative z-10
+            border-b border-white/20 shadow-lg
+            lg:px-8 md:px-6 sm:px-4
+            ${isOpen
+                ? 'bg-gradient-to-r from-blue-700 via-teal-700 to-green-700'
+                : 'bg-gradient-to-r from-blue-500/80 via-teal-500/70 to-green-500/80 backdrop-blur-xl'
+            }`}>
 
             {/* ── Logo / Brand ── */}
             <motion.div
@@ -131,99 +135,94 @@ const NavBar = () => {
             <button
                 onClick={handleClick}
                 aria-label="Toggle menu"
-                className="hidden lg:flex flex-col justify-center items-center gap-1.5 p-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-200"
+                className="hidden lg:flex flex-col justify-center items-center gap-1.5 p-2.5 rounded-lg bg-teal-700 hover:bg-teal-600 border border-white/30 shadow-md transition-all duration-200"
             >
                 <span className={`bg-white block transition-all duration-300 h-0.5 w-5 rounded-full ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
                 <span className={`bg-white block transition-all duration-300 h-0.5 w-5 rounded-full ${isOpen ? 'opacity-0 scale-x-0' : ''}`} />
                 <span className={`bg-white block transition-all duration-300 h-0.5 w-5 rounded-full ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
-
-            {/* ── Mobile Drawer ── */}
-            <AnimatePresence>
-                {isOpen && (
-                    <>
-                        {/* Backdrop */}
-                        <motion.div
-                            key="backdrop"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={handleClick}
-                            className="fixed inset-0 z-20 bg-black/40 backdrop-blur-sm"
-                        />
-
-                        {/* Drawer panel */}
-                        <motion.div
-                            key="drawer"
-                            initial={{ opacity: 0, x: '100%' }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: '100%' }}
-                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-72 z-30 flex flex-col
-                                bg-gradient-to-b from-blue-600/95 via-teal-600/95 to-green-600/95
-                                backdrop-blur-2xl border-l border-white/20 shadow-2xl
-                                sm:w-[85vw]"
-                        >
-                            {/* Drawer header */}
-                            <div className="flex items-center justify-between px-6 py-5 border-b border-white/20">
-                                <span className="text-white font-extrabold text-lg tracking-tight">
-                                    RPG<span className="text-emerald-300">.</span>
-                                </span>
-                                <button
-                                    onClick={handleClick}
-                                    className="text-white/70 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-all"
-                                >
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            {/* Nav links */}
-                            <nav className="flex flex-col gap-1 px-4 pt-6 flex-1">
-                                {[
-                                    { href: '/',              title: 'Home' },
-                                    { href: '/about',         title: 'About' },
-                                    { href: '/education',     title: 'Education' },
-                                    { href: '/projects',      title: 'Projects' },
-                                    { href: '/certification', title: 'Certification' },
-                                    { href: '/ContactMe',     title: 'Contact Me' },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={item.href}
-                                        initial={{ opacity: 0, x: 20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: i * 0.06 }}
-                                    >
-                                        <CustomMobileLink
-                                            href={item.href}
-                                            title={item.title}
-                                            toggle={handleClick}
-                                        />
-                                    </motion.div>
-                                ))}
-                            </nav>
-
-                            {/* Social icons in drawer */}
-                            <div className="px-6 py-6 border-t border-white/20">
-                                <p className="text-white/50 text-xs uppercase tracking-widest mb-3 font-semibold">Find me on</p>
-                                <div className="flex items-center gap-4">
-                                    <SocialLink href="https://github.com/RohanPrasadGupta" label="GitHub">
-                                        <GithubIcon />
-                                    </SocialLink>
-                                    <SocialLink href="https://www.linkedin.com/in/rohanprasadgupta" label="LinkedIn">
-                                        <LinkedInIcon />
-                                    </SocialLink>
-                                    <SocialLink href="https://leetcode.com/u/rohg505/" label="LeetCode">
-                                        <LeetCodeIcon />
-                                    </SocialLink>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
         </header>
+
+        {/* ── Mobile Drawer (outside header to avoid stacking-context bleed-through) ── */}
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    <motion.div
+                        key="backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={handleClick}
+                        className="fixed inset-0 z-[55] bg-black/60"
+                    />
+
+                    <motion.div
+                        key="drawer"
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        className="fixed top-0 right-0 h-full w-72 z-[60] flex flex-col
+                            bg-black/95
+                            sm:w-[85vw]"
+                    >
+                        <div className="flex items-center justify-between px-6 py-5 border-b border-white/20 bg-black/95">
+                            <span className="text-white font-extrabold text-lg tracking-tight">
+                                RPG<span className="text-emerald-300">.</span>
+                            </span>
+                            <button
+                                onClick={handleClick}
+                                className="text-white/70 hover:text-white p-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <nav className="flex flex-col gap-1 px-4 pt-6 flex-1">
+                            {[
+                                { href: '/',              title: 'Home' },
+                                { href: '/about',         title: 'About' },
+                                { href: '/education',     title: 'Education' },
+                                { href: '/projects',      title: 'Projects' },
+                                { href: '/certification', title: 'Certification' },
+                                { href: '/ContactMe',     title: 'Contact Me' },
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={item.href}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.06 }}
+                                >
+                                    <CustomMobileLink
+                                        href={item.href}
+                                        title={item.title}
+                                        toggle={handleClick}
+                                    />
+                                </motion.div>
+                            ))}
+                        </nav>
+
+                        <div className="px-6 py-6 border-t border-white/20">
+                            <p className="text-white/50 text-xs uppercase tracking-widest mb-3 font-semibold">Find me on</p>
+                            <div className="flex items-center gap-4">
+                                <SocialLink href="https://github.com/RohanPrasadGupta" label="GitHub">
+                                    <GithubIcon className="text-white" />
+                                </SocialLink>
+                                <SocialLink href="https://www.linkedin.com/in/rohanprasadgupta" label="LinkedIn">
+                                    <LinkedInIcon />
+                                </SocialLink>
+                                <SocialLink href="https://leetcode.com/u/rohg505/" label="LeetCode">
+                                    <LeetCodeIcon />
+                                </SocialLink>
+                            </div>
+                        </div>
+                    </motion.div>
+                </>
+            )}
+        </AnimatePresence>
+        </>
     );
 };
 

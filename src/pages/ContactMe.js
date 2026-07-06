@@ -4,25 +4,30 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
 const ContactMe = () => {
   const [nameText, setNameText] = useState("");
   const [emailText, setEmailText] = useState("");
   const [msgText, setMsgText] = useState("");
   const [bannerVisible, setBannerVisible] = useState(false);
   const [bannerMessage, setBannerMessage] = useState("");
+  const [bannerType, setBannerType] = useState("success");
   const [isSending, setIsSending] = useState(false);
   const isFormReady =
     Boolean(nameText.trim()) &&
-    Boolean(emailText.trim()) &&
+    isValidEmail(emailText) &&
     Boolean(msgText.trim());
 
-  const showBanner = (message) => {
+  const showBanner = (message, type = "success") => {
     setBannerMessage(message);
+    setBannerType(type);
     setBannerVisible(true);
 
     setTimeout(() => {
       setBannerVisible(false);
       setBannerMessage("");
+      setBannerType("success");
     }, 3000);
   };
 
@@ -30,7 +35,12 @@ const ContactMe = () => {
     e.preventDefault();
 
     if (!nameText.trim() || !emailText.trim() || !msgText.trim()) {
-      showBanner("Please fill in all fields.");
+      showBanner("Please fill in all fields.", "error");
+      return;
+    }
+
+    if (!isValidEmail(emailText)) {
+      showBanner("Please enter a valid email address.", "error");
       return;
     }
 
@@ -43,9 +53,9 @@ const ContactMe = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: nameText,
-          email: emailText,
-          message: msgText,
+          name: nameText.trim(),
+          email: emailText.trim(),
+          message: msgText.trim(),
         }),
       });
 
@@ -58,9 +68,9 @@ const ContactMe = () => {
       setNameText("");
       setEmailText("");
       setMsgText("");
-      showBanner("Email sent successfully!");
+      showBanner("Thank you, I received your message");
     } catch (error) {
-      showBanner(error.message || "Email sending failed.");
+      showBanner(error.message || "Email sending failed.", "error");
     } finally {
       setIsSending(false);
     }
@@ -74,7 +84,7 @@ const ContactMe = () => {
       </Head>
       <Transitions />
       <main className="w-full min-h-screen px-6 py-10 md:px-4">
-        {bannerVisible && <Banner message={bannerMessage} />}
+        {bannerVisible && <Banner message={bannerMessage} type={bannerType} />}
 
         <section className="w-full max-w-6xl mx-auto mt-16 md:mt-10">
           <div className="rounded-3xl border border-white/35 bg-white/10 backdrop-blur-xl p-8 shadow-2xl md:p-5">
@@ -132,7 +142,7 @@ const ContactMe = () => {
               <div className="rounded-2xl border border-white/30 bg-white/15 p-6 shadow-xl">
                 <p className="text-white text-2xl font-semibold md:text-xl">Send a Message</p>
                 <p className="text-white/80 mt-2 text-sm">
-                  Fill all fields to enable the send button.
+                  Fill all fields with a valid email to enable the send button.
                 </p>
 
                 <form onSubmit={sendEmail} className="flex flex-col mt-5">
