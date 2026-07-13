@@ -3,69 +3,83 @@ import { GithubIcon, LinkArrow } from "@/components/Icons";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Transitions from "@/components/Transitions";
 
-const Projects = () => {
-  const FramerImage = motion(Image);
+const FramerImage = motion(Image);
+const SUMMARY_LIMIT = 70;
 
-  const FeatureProject = ({ title, date, summary, link, linkGH, img }) => {
-    return (
-      <div className="relative group">
-        {/* White Modern Card */}
-        <div className="rounded-3xl border border-gray-200 bg-white shadow-lg p-6 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
-          {/* Project Image */}
-          <FramerImage
-            src={img}
-            alt={title}
-            width={300}
-            maxWidth={300}
-            height={384}
-            className="w-full h-96 object-cover rounded-2xl border border-gray-200 shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            priority
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw"
-          />
+const FeatureProject = ({ title, date, summary, link, linkGH, img }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const needsTruncate = summary.length > SUMMARY_LIMIT;
+  const displaySummary =
+    needsTruncate && !isExpanded
+      ? `${summary.slice(0, SUMMARY_LIMIT)}...`
+      : summary;
 
-          {/* Text Content */}
-          <div className="flex flex-col items-start mt-6 space-y-4">
-            <h3 className="text-2xl font-bold text-gray-900 md:text-lg sm:text-base">
-              {title}
-              <span className="ml-3 text-sm font-medium text-gray-500">
-                {date}
-              </span>
-            </h3>
+  return (
+    <div className="relative group h-full">
+      <div className="h-full flex flex-col rounded-3xl border border-gray-200 bg-white shadow-lg p-6 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+        <FramerImage
+          src={img}
+          alt={title}
+          width={300}
+          maxWidth={300}
+          height={384}
+          className="w-full h-96 object-cover rounded-2xl border border-gray-200 shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          priority
+          sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw"
+        />
 
-            <p className="text-gray-700 leading-relaxed text-justify text-base md:text-sm sm:text-xs">
-              {summary}
-            </p>
+        <div className="flex flex-col flex-1 items-start mt-6 space-y-4">
+          <h3 className="text-2xl font-bold text-gray-900 md:text-lg sm:text-base">
+            {title}
+            <span className="ml-3 text-sm font-medium text-gray-500">
+              {date}
+            </span>
+          </h3>
 
-            {/* Buttons */}
-            <div className="flex items-center gap-4 mt-4">
-              {/* GitHub */}
-              <Link href={linkGH} target="_blank" aria-label="View on GitHub">
-                <GithubIcon className="h-[40px] w-[40px] text-gray-700 hover:text-primary hover:scale-110 transition-transform duration-200 md:h-[30px] md:w-[30px]" />
-              </Link>
+          <p className="text-gray-700 leading-relaxed text-justify text-base md:text-sm sm:text-xs">
+            {displaySummary}
+            {needsTruncate && (
+              <>
+                {" "}
+                <button
+                  type="button"
+                  onClick={() => setIsExpanded((prev) => !prev)}
+                  className="font-semibold text-primary hover:underline"
+                >
+                  {isExpanded ? "Show less" : "Read more"}
+                </button>
+              </>
+            )}
+          </p>
 
-              {/* Live Demo */}
-              <Link
-                href={link}
-                target="_blank"
-                className="flex whitespace-nowrap items-center gap-2 bg-gray-900 text-white px-5 py-2 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900 hover:border-gray-900 border border-transparent md:text-sm sm:text-xs"
-              >
-                View Project
-                <LinkArrow className="w-4 h-4" />
-              </Link>
-            </div>
+          <div className="flex items-center gap-4 mt-auto pt-2">
+            <Link href={linkGH} target="_blank" aria-label="View on GitHub">
+              <GithubIcon className="h-[40px] w-[40px] text-gray-700 hover:text-primary hover:scale-110 transition-transform duration-200 md:h-[30px] md:w-[30px]" />
+            </Link>
+
+            <Link
+              href={link}
+              target="_blank"
+              className="flex whitespace-nowrap items-center gap-2 bg-gray-900 text-white px-5 py-2 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900 hover:border-gray-900 border border-transparent md:text-sm sm:text-xs"
+            >
+              View Project
+              <LinkArrow className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
+const Projects = () => {
   return (
     <>
       <Head>
@@ -80,7 +94,16 @@ const Projects = () => {
             className="text-6xl h-20 md:text-[40px] sm:text-[35px] xs:text-[35px] text-light"
           />
 
-          <div className="grid grid-flow-col gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
+            <FeatureProject
+              img="/images/projects/AIandRag.png"
+              title="AI Document RAG & Resume ATS Platform"
+              date="[ 2026 ]"
+              summary="Built a full-stack RAG and ATS platform with a Go Chi backend and React 19 + TypeScript + Vite frontend. Documents are extracted, chunked, embedded (Voyage AI), and stored across PostgreSQL, AWS S3, and Pinecone for grounded Q&A with Claude Haiku. The same pipeline powers resume ATS scoring, cover-letter generation, and tailored LaTeX resumes with live PDF preview. Deployed frontend on Netlify."
+              link="https://golang-doc-ai.netlify.app/"
+              linkGH="https://github.com/RohanPrasadGupta/golang-doc-rag"
+            />
+
             <FeatureProject
               img="/images/projects/resmgr.jpeg"
               title="Real-Time Restaurant Management System"
@@ -89,7 +112,9 @@ const Projects = () => {
               link="https://mgr-frontend.netlify.app/pages/home"
               linkGH="https://github.com/RohanPrasadGupta/resturant_mgr_frontend"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/e-commerce.jpeg"
               title="E-Commerce Platform: Full-Stack Web Application [ THE CART ]"
@@ -98,9 +123,7 @@ const Projects = () => {
               link="https://rpg-ecommerce.netlify.app/pages/dashboard"
               linkGH="https://github.com/RohanPrasadGupta/ecommerce-proj"
             />
-          </div>
 
-          <div className="grid grid-flow-col gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/bpizza.jpg"
               title="B.Pizza Co. – Pizza ordering website"
@@ -109,7 +132,9 @@ const Projects = () => {
               link="https://bpizza-rpg.netlify.app/"
               linkGH="https://github.com/RohanPrasadGupta/B.pizzaCo"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/Opencv.png"
               title="Face Recognition Attendance System"
@@ -118,9 +143,7 @@ const Projects = () => {
               link="https://github.com/RohanPrasadGupta/HW_PROJECT-TU-"
               linkGH="https://github.com/RohanPrasadGupta/HW_PROJECT-TU-"
             />
-          </div>
 
-          <div className="grid grid-flow-col gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/mergerd-proj.png"
               title="Combined React Projects"
@@ -129,7 +152,9 @@ const Projects = () => {
               link="https://rpg-merged-projects.netlify.app/"
               linkGH="https://github.com/RohanPrasadGupta/Combined_Small_Project"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/textproject.png"
               title="Text Utility Application"
