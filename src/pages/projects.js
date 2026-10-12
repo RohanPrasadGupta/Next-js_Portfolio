@@ -96,6 +96,15 @@ const Projects = () => {
 
           <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
+              img="/images/projects/code_sense.png"
+              title="CodeSense AI – AI Codebase Assistant"
+              date="[ 2026 ]"
+              summary="Built a full-stack AI tool that ingests a ZIP or GitHub repo and enables code browsing, natural language Q&A, and AI-driven analysis. Python, JavaScript, TypeScript, and Go are parsed with Tree-sitter into function/class chunks, embedded with Voyage AI into Pinecone (one namespace per repo), and answered by Claude via RAG with the UI jumping to cited lines. Three LangGraph agents (code reviewer, docs generator, architecture analyzer) return Pydantic-validated output, and the Next.js 16 + React 19 + TypeScript dashboard uses TanStack Query with a Shiki-highlighted code viewer."
+              link="https://rpg-codesenseai.netlify.app"
+              linkGH="https://github.com/RohanPrasadGupta/CodeSenseAi"
+            />
+
+            <FeatureProject
               img="/images/projects/AIandRag.png"
               title="AI Document RAG & Resume ATS Platform"
               date="[ 2026 ]"
@@ -103,7 +112,9 @@ const Projects = () => {
               link="https://golang-doc-ai.netlify.app/"
               linkGH="https://github.com/RohanPrasadGupta/golang-doc-rag"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/resmgr.jpeg"
               title="Real-Time Restaurant Management System"
@@ -112,9 +123,7 @@ const Projects = () => {
               link="https://mgr-frontend.netlify.app/pages/home"
               linkGH="https://github.com/RohanPrasadGupta/resturant_mgr_frontend"
             />
-          </div>
 
-          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/e-commerce.jpeg"
               title="E-Commerce Platform: Full-Stack Web Application [ THE CART ]"
@@ -123,7 +132,9 @@ const Projects = () => {
               link="https://rpg-ecommerce.netlify.app/pages/dashboard"
               linkGH="https://github.com/RohanPrasadGupta/ecommerce-proj"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/bpizza.jpg"
               title="B.Pizza Co. – Pizza ordering website"
@@ -132,9 +143,7 @@ const Projects = () => {
               link="https://bpizza-rpg.netlify.app/"
               linkGH="https://github.com/RohanPrasadGupta/B.pizzaCo"
             />
-          </div>
 
-          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/Opencv.png"
               title="Face Recognition Attendance System"
@@ -143,7 +152,9 @@ const Projects = () => {
               link="https://github.com/RohanPrasadGupta/HW_PROJECT-TU-"
               linkGH="https://github.com/RohanPrasadGupta/HW_PROJECT-TU-"
             />
+          </div>
 
+          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/mergerd-proj.png"
               title="Combined React Projects"
@@ -152,9 +163,7 @@ const Projects = () => {
               link="https://rpg-merged-projects.netlify.app/"
               linkGH="https://github.com/RohanPrasadGupta/Combined_Small_Project"
             />
-          </div>
 
-          <div className="grid grid-flow-col items-start gap-24 mt-20 md:flex-col md:flex sm:flex-col sm:flex xs:flex-col xs:flex">
             <FeatureProject
               img="/images/projects/textproject.png"
               title="Text Utility Application"
